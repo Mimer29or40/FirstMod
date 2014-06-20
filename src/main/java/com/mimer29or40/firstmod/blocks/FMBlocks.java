@@ -1,8 +1,8 @@
-package com.mimer29or40.firstmod.block;
-
+package com.mimer29or40.firstmod.blocks;
 
 import com.mimer29or40.firstmod.creativetab.CreativeTabFirstMod;
 import com.mimer29or40.firstmod.reference.Textures;
+import com.mimer29or40.firstmod.util.LogHelper;
 import com.mimer29or40.firstmod.util.NameHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -13,14 +13,14 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class BlockFirstMod extends Block
+public class FMBlocks extends Block
 {
-    protected BlockFirstMod()
+    protected FMBlocks()
     {
         super(Material.rock);
     }
 
-    public BlockFirstMod(Material material)
+    public FMBlocks(Material material)
     {
         super(material);
         this.setCreativeTab(CreativeTabFirstMod.FIRSTMOD_TAB);
@@ -36,7 +36,7 @@ public class BlockFirstMod extends Block
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister)
     {
-        blockIcon = iconRegister.registerIcon(String.format("%s",NameHelper.getUnwrappedUnlocalizedName(this.getUnlocalizedName())));
+        blockIcon = iconRegister.registerIcon(String.format("%s", NameHelper.getUnwrappedUnlocalizedName(this.getUnlocalizedName())));
     }
 
     @Override

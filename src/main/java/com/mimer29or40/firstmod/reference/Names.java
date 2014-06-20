@@ -4,7 +4,7 @@ public class Names
 {
     public static class Block
     {
-        public static final String FIRST_BLOCK = "First Block";
+        public static final String TEST = "Test";
     }
 
     public static class Item

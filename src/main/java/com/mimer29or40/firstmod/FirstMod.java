@@ -1,6 +1,7 @@
 package com.mimer29or40.firstmod;
 
 import com.mimer29or40.firstmod.configuration.ConfigurationHandler;
+import com.mimer29or40.firstmod.init.ModBlocks;
 import com.mimer29or40.firstmod.reference.Reference;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -18,7 +19,7 @@ public class FirstMod
     {
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 
-
+        ModBlocks.init();
     }
 
     @Mod.EventHandler
