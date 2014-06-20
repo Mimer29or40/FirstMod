@@ -1,0 +1,20 @@
+[
+{
+  "modid": "firstmod",
+  "name": "First Mod",
+  "description": "The first mod that I have ever created!!",
+  "version": "0.1",
+  "url": "",
+  "updateUrl": "",
+  "authorList": [
+    "Mimer29or40"
+  ],
+  "credits": "Pahimar",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]
