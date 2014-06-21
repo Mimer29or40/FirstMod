@@ -10,7 +10,6 @@ public class FirstMod
     @Mod.Instance("firstmod")
     public static FirstMod instance;
 
-
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
