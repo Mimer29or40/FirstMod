@@ -3,7 +3,8 @@
   "modid": "firstmod",
   "name": "First Mod",
   "description": "The first mod that I have ever created!! Thanks to Pahimar for making the LetsModReboot.",
-  "version": "0.1",
+  "version": "${mod_version}",
+  "mcversion": "${minecraft_version}",
   "url": "",
   "updateUrl": "",
   "authorList": [
