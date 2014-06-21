@@ -2,7 +2,7 @@
 {
   "modid": "firstmod",
   "name": "First Mod",
-  "description": "The first mod that I have ever created!!",
+  "description": "The first mod that I have ever created!! Thanks to Pahimar for making the LetsModReboot.",
   "version": "0.1",
   "url": "",
   "updateUrl": "",
@@ -10,7 +10,7 @@
     "Mimer29or40"
   ],
   "credits": "Pahimar",
-  "logoFile": "",
+  "logoFile": "/assets/firstmod/textures/logo/logo.png",
   "screenshots": [
   ],
   "parent":"",
