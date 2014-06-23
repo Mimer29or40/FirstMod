@@ -3,8 +3,8 @@
   "modid": "firstMod",
   "name": "My First Mod",
   "description": "Mimer29or40 mod from Pahimar's Lets Mod Reboot",
-  "version": "0.0.1",
-  "mcversion": "1.7.2",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
   "authorList": [
