@@ -1,5 +1,6 @@
 package com.mimer29or40.firstmod;
 
+import com.mimer29or40.firstmod.configuration.ConfigurationHandler;
 import com.mimer29or40.firstmod.proxy.IProxy;
 import com.mimer29or40.firstmod.reference.Reference;
 import cpw.mods.fml.common.Mod;
@@ -20,7 +21,7 @@ public class FirstMod
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-
+        ConfigurationHandler.init(event.getSuggestedConfigurationFile());
     }
 
     @Mod.EventHandler
