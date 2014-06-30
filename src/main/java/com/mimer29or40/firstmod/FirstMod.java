@@ -1,8 +1,8 @@
 package com.mimer29or40.firstmod;
 
 import com.mimer29or40.firstmod.configuration.ConfigurationHandler;
+import com.mimer29or40.firstmod.configuration.Settings;
 import com.mimer29or40.firstmod.proxy.IProxy;
-import com.mimer29or40.firstmod.reference.Config;
 import com.mimer29or40.firstmod.reference.Reference;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
@@ -34,6 +34,6 @@ public class FirstMod
     @Mod.EventHandler
     public void postInit(FMLInitializationEvent event)
     {
-        System.out.println(Config.TEST_CONFIG + ": " + Config.TEST_CONFIG_VALUE);
+        System.out.println(Settings.TEST_CONFIG + ": " + Settings.testConfigValue);
     }
 }

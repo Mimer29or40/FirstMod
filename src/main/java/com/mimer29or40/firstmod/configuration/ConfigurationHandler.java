@@ -1,6 +1,5 @@
 package com.mimer29or40.firstmod.configuration;
 
-import com.mimer29or40.firstmod.reference.Config;
 import net.minecraftforge.common.config.Configuration;
 
 import java.io.File;
@@ -18,7 +17,7 @@ public class ConfigurationHandler
             configuration.load();
 
             // Read in properties from configuration file
-            Config.TEST_CONFIG_VALUE = configuration.get(Configuration.CATEGORY_GENERAL, Config.TEST_CONFIG, Config.TEST_CONFIG_DEFAULT_VALUE, Config.TEST_CONFIG_LABEL).getBoolean(Config.TEST_CONFIG_DEFAULT_VALUE);
+            Settings.testConfigValue = configuration.get(Configuration.CATEGORY_GENERAL, Settings.TEST_CONFIG, Settings.TEST_CONFIG_DEFAULT_VALUE, Settings.TEST_CONFIG_LABEL).getBoolean(Settings.TEST_CONFIG_DEFAULT_VALUE);
         }
         catch (Exception e)
         {
