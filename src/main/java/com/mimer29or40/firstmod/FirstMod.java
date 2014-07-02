@@ -22,7 +22,7 @@ public class FirstMod
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-        ConfigurationHandler.init(event.getSuggestedConfigurationFile());
+        ConfigurationHandler.loadConfig(event.getSuggestedConfigurationFile());
     }
 
     @Mod.EventHandler

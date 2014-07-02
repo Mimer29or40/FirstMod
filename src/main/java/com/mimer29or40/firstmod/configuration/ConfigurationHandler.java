@@ -6,18 +6,18 @@ import java.io.File;
 
 public class ConfigurationHandler
 {
-    public static void init(File configFile)
+    public static void loadConfig(File configFile)
     {
         // Create the configuration object from the given configuration file
-        Configuration configuration = new Configuration(configFile);
+        Configuration config = new Configuration(configFile);
 
         try
         {
             // Load the configuration file
-            configuration.load();
+            config.load();
 
             // Read in properties from configuration file
-            Settings.testConfigValue = configuration.get(Configuration.CATEGORY_GENERAL, Settings.TEST_CONFIG, Settings.TEST_CONFIG_DEFAULT_VALUE, Settings.TEST_CONFIG_LABEL).getBoolean(Settings.TEST_CONFIG_DEFAULT_VALUE);
+            Settings.testConfigValue = config.get(Configuration.CATEGORY_GENERAL, Settings.TEST_CONFIG, Settings.TEST_CONFIG_DEFAULT_VALUE, Settings.TEST_CONFIG_LABEL).getBoolean(Settings.TEST_CONFIG_DEFAULT_VALUE);
         }
         catch (Exception e)
         {
@@ -26,7 +26,7 @@ public class ConfigurationHandler
         finally
         {
             // Save the configuration file
-            configuration.save();
+            config.save();
         }
     }
 }
