@@ -1,4 +1,4 @@
-package com.mimer29or40.firstmod.configuration;
+package com.mimer29or40.firstmod.reference;
 
 public class Settings
 {
