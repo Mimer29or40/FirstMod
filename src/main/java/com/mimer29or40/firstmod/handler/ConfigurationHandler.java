@@ -48,6 +48,18 @@ public class ConfigurationHandler
                 Settings.INT_MIN,
                 Settings.INT_MAX,
                 Settings.INT_LABEL);
+        Settings.stringValue = config.getString(
+                Settings.STRING_NAME,
+                Settings.CATEGORY_GENERAL,
+                Settings.STRING_DEFAULT,
+                Settings.STRING_LABEL);
+        Settings.floatValue = config.getFloat(
+                Settings.FLOAT_NAME,
+                Settings.CATEGORY_GENERAL,
+                Settings.FLOAT_DEFAULT,
+                Settings.FLOAT_MIN,
+                Settings.FLOAT_MAX,
+                Settings.FLOAT_LABEL);
 
         if (config.hasChanged())
         {

@@ -12,9 +12,6 @@ public class Settings
     public static final boolean BOOLEAN_DEFAULT = true;
     public static final String BOOLEAN_LABEL = "Example boolean value";
 
-    // Test Category
-    public static final String CATEGORY_TEST = "test";
-
     public static final String INT_NAME = "Int Config";
     public static int intValue;
     public static final int INT_DEFAULT = 25;
@@ -22,4 +19,19 @@ public class Settings
     public static final int INT_MAX = 50;
     public static final String INT_LABEL = "Example int value";
 
+    public static final String STRING_NAME = "String Config";
+    public static String stringValue;
+    public static final String STRING_DEFAULT = "Two by Two";
+    public static final String STRING_LABEL = "Example string value";
+
+    public static final String FLOAT_NAME = "Float Config";
+    public static float floatValue;
+    public static final float FLOAT_DEFAULT = 5.0F;
+    public static final float FLOAT_MIN = 1.0F;
+    public static final float FLOAT_MAX = 10.0F;
+    public static final String FLOAT_LABEL = "Example float Value";
+
+
+    // Test Category
+    public static final String CATEGORY_TEST = "test";
 }
