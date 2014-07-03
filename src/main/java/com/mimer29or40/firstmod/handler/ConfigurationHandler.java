@@ -13,38 +13,50 @@ public class ConfigurationHandler
 {
     public static  Configuration config;
 
-    public static void loadConfig(File configFile)
+    public static void init(File configFile)
     {
         // Create the configuration object from the given configuration file
         if (config == null)
         {
-            LogHelper.info("Creating config......");
             config = new Configuration(configFile);
+            loadConfiguration();
         }
     }
 
     @SubscribeEvent
     public void onConfigurationChangeEvent(ConfigChangedEvent.OnConfigChangedEvent event)
     {
-        if (event.modID.equalsIgnoreCase(Reference.MOD_ID))
+        if (event.modID.equals(Reference.MOD_ID))
         {
-            LogHelper.info("Loading Config......");
             loadConfiguration();
         }
     }
 
-    public void loadConfiguration()
+    private static void loadConfiguration()
     {
-        Settings.testConfigValue = config.getBoolean(Settings.TEST_CONFIG, Configuration.CATEGORY_GENERAL, Settings.TEST_CONFIG_DEFAULT_VALUE, Settings.TEST_CONFIG_LABEL);
+        LogHelper.info("Loading Config...");
+
+        Settings.booleanValue = config.getBoolean(
+                Settings.BOOLEAN_NAME,
+                Settings.CATEGORY_GENERAL,
+                Settings.BOOLEAN_DEFAULT,
+                Settings.BOOLEAN_LABEL);
+        Settings.intValue = config.getInt(
+                Settings.INT_NAME,
+                Settings.CATEGORY_GENERAL,
+                Settings.INT_DEFAULT,
+                Settings.INT_MIN,
+                Settings.INT_MAX,
+                Settings.INT_LABEL);
 
         if (config.hasChanged())
         {
-            LogHelper.info("Config changed. Saving....");
+            LogHelper.info("Change detected. Saving...");
             config.save();
         }
         else
         {
-            LogHelper.info("Config hasn't changed");
+            LogHelper.info("No change detected");
         }
     }
 }

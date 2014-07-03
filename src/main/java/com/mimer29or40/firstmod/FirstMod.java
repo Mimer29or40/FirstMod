@@ -1,15 +1,14 @@
 package com.mimer29or40.firstmod;
 
 import com.mimer29or40.firstmod.handler.ConfigurationHandler;
-import com.mimer29or40.firstmod.reference.Settings;
 import com.mimer29or40.firstmod.proxy.IProxy;
 import com.mimer29or40.firstmod.reference.Reference;
 import com.mimer29or40.firstmod.util.LogHelper;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
 public class FirstMod
@@ -23,19 +22,31 @@ public class FirstMod
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-        ConfigurationHandler.loadConfig(event.getSuggestedConfigurationFile());
+        LogHelper.info("");
+        LogHelper.info("Pre Initialization Started");
+        ConfigurationHandler.init(event.getSuggestedConfigurationFile());
+        FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
         LogHelper.info("Pre Initialization Complete!");
+        LogHelper.info("");
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
+        LogHelper.info("");
+        LogHelper.info("Initialization Started");
+        FMLCommonHandler.instance().bus().register(instance);
         LogHelper.info("Initialization Complete!");
+        LogHelper.info("");
     }
 
     @Mod.EventHandler
     public void postInit(FMLInitializationEvent event)
     {
+        LogHelper.info("");
+        LogHelper.info("Post Initialization Started");
+
         LogHelper.info("Post Initialization Complete!");
+        LogHelper.info("");
     }
 }
