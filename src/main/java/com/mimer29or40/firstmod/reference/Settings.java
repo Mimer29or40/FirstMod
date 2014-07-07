@@ -31,7 +31,6 @@ public class Settings
     public static final float FLOAT_MAX = 10.0F;
     public static final String FLOAT_LABEL = "Example float Value";
 
-
     // Test Category
     public static final String CATEGORY_TEST = "test";
 }
