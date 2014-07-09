@@ -1,6 +1,7 @@
 package com.mimer29or40.firstmod;
 
 import com.mimer29or40.firstmod.handler.ConfigurationHandler;
+import com.mimer29or40.firstmod.init.ModBlocks;
 import com.mimer29or40.firstmod.init.ModItems;
 import com.mimer29or40.firstmod.proxy.IProxy;
 import com.mimer29or40.firstmod.reference.Reference;
@@ -30,6 +31,8 @@ public class FirstMod
         FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
 
         ModItems.init();
+
+        ModBlocks.init();
 
         LogHelper.info("Pre Initialization Complete!");
         LogHelper.info("");

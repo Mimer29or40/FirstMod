@@ -6,4 +6,9 @@ public class Names
     {
         public static final String MAPLE_LEAF = "mapleLeaf";
     }
+
+    public static class Blocks
+    {
+        public static final String FLAG = "flag";
+    }
 }

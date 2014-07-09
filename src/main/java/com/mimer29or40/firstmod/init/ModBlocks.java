@@ -1,18 +1,18 @@
 package com.mimer29or40.firstmod.init;
 
-import com.mimer29or40.firstmod.item.ItemFM;
-import com.mimer29or40.firstmod.item.ItemMapleLeaf;
+import com.mimer29or40.firstmod.block.BlockFM;
+import com.mimer29or40.firstmod.block.BlockFlag;
 import com.mimer29or40.firstmod.reference.Names;
 import com.mimer29or40.firstmod.reference.Reference;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 @GameRegistry.ObjectHolder(Reference.MOD_ID)
-public class ModItems
+public class ModBlocks
 {
-    public static final ItemFM mapleLeaf = new ItemMapleLeaf();
+    public static final BlockFM flag = new BlockFlag();
 
     public static void init()
     {
-        GameRegistry.registerItem(mapleLeaf, Names.Items.MAPLE_LEAF);
+        GameRegistry.registerBlock(flag, Names.Blocks.FLAG);
     }
 }
