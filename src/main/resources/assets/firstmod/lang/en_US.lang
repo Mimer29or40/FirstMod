@@ -1,5 +1,6 @@
 # Items
 item.firstmod:mapleLeaf.name=Maple Leaf of Awesomeness
+item.firstmod:torch.name=Torch of Liberty
 
 # Blocks
-tile.firstmod:flag.name=Canadian Flay of Awesomeness
+tile.firstmod:flag.name=American Flag
