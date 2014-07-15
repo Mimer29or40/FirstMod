@@ -1,6 +1,8 @@
 package com.mimer29or40.firstmod.block;
 
+import com.mimer29or40.firstmod.creativeTab.CreativeTab;
 import com.mimer29or40.firstmod.reference.Textures;
+import com.mimer29or40.firstmod.util.LogHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -13,11 +15,13 @@ public class BlockFM extends Block
     public BlockFM(Material material)
     {
         super(material);
+        this.setCreativeTab(CreativeTab.FM_TAB);
     }
 
     public BlockFM()
     {
         this(Material.rock);
+        this.setCreativeTab(CreativeTab.FM_TAB);
     }
 
     @Override

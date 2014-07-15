@@ -1,5 +1,6 @@
 package com.mimer29or40.firstmod.item;
 
+import com.mimer29or40.firstmod.creativeTab.CreativeTab;
 import com.mimer29or40.firstmod.reference.Reference;
 import com.mimer29or40.firstmod.reference.Textures;
 import cpw.mods.fml.relauncher.Side;
@@ -13,6 +14,7 @@ public class ItemFM extends Item
     public ItemFM()
     {
         super();
+        this.setCreativeTab(CreativeTab.FM_TAB);
     }
 
     @Override
