@@ -11,5 +11,5 @@ public class Textures
     public static final String MODEL_TEXTURE_LOCATION = "textures/models/";
 
     // Model textures
-    public static final ResourceLocation MODEL_ARROW = ResourceLocationHelper.getResourceLocation(MODEL_TEXTURE_LOCATION + "arrow.png");
+
 }
