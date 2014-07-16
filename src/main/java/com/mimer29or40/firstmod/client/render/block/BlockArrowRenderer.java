@@ -34,10 +34,6 @@ public class BlockArrowRenderer implements ISimpleBlockRenderingHandler
                     renderer.uvRotateNorth = 3;
                     break;
                 case 1:
-                    renderer.uvRotateNorth = 0;
-                    renderer.uvRotateSouth = 0;
-                    renderer.uvRotateEast = 0;
-                    renderer.uvRotateWest = 0;
                     break;
                 case 2:
                     renderer.uvRotateNorth = 2;
