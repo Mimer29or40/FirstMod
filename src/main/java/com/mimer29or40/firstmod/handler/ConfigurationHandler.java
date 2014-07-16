@@ -60,6 +60,11 @@ public class ConfigurationHandler
                 Settings.FLOAT_MIN,
                 Settings.FLOAT_MAX,
                 Settings.FLOAT_LABEL);
+        Settings.RENDER_LIKE_GLASS = config.getBoolean(
+                Settings.RENDER_LIKE_GLASS_NAME,
+                Settings.CATEGORY_GENERAL,
+                Settings.RENDER_LIKE_GLASS_DEFAULT,
+                Settings.RENDER_LIKE_GLASS_LABEL);
 
         if (config.hasChanged())
         {

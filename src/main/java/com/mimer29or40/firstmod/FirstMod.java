@@ -3,6 +3,7 @@ package com.mimer29or40.firstmod;
 import com.mimer29or40.firstmod.handler.ConfigurationHandler;
 import com.mimer29or40.firstmod.init.ModBlocks;
 import com.mimer29or40.firstmod.init.ModItems;
+import com.mimer29or40.firstmod.proxy.ClientProxy;
 import com.mimer29or40.firstmod.proxy.IProxy;
 import com.mimer29or40.firstmod.reference.Reference;
 import com.mimer29or40.firstmod.util.LogHelper;
@@ -45,6 +46,7 @@ public class FirstMod
         LogHelper.info("Initialization Started");
 
         FMLCommonHandler.instance().bus().register(instance);
+        ClientProxy.initRenderingAndTextures();
 
         LogHelper.info("Initialization Complete!");
         LogHelper.info("");

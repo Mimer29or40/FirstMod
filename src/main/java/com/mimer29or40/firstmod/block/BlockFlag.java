@@ -12,7 +12,7 @@ public class BlockFlag extends BlockFM
         super();
         this.setBlockName(Names.Blocks.FLAG);
         this.setBlockTextureName(Names.Blocks.FLAG);
-        this.setBlockBounds(0.25F, 0F, 0.25F, 0.75F, 1.0F, 0.75F);
+//        this.setBlockBounds(0.25F, 0F, 0.25F, 0.75F, 1.0F, 0.75F);
     }
 
     @Override

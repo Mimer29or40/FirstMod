@@ -4,3 +4,5 @@ item.firstmod:torch.name=Torch of Liberty
 
 # Blocks
 tile.firstmod:flag.name=American Flag
+tile.firstmod:frame.name=Frame
+tile.firstmod:arrow.name=Arrow Block

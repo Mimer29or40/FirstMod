@@ -31,6 +31,11 @@ public class Settings
     public static final float FLOAT_MAX = 10.0F;
     public static final String FLOAT_LABEL = "Example float Value";
 
+    public static final String RENDER_LIKE_GLASS_NAME = "Render frame like glass";
+    public static boolean RENDER_LIKE_GLASS;
+    public static final boolean RENDER_LIKE_GLASS_DEFAULT = false;
+    public static final String RENDER_LIKE_GLASS_LABEL = "Decided whether or not to render the sides of the frame";
+
     // Test Category
     public static final String CATEGORY_TEST = "test";
 }

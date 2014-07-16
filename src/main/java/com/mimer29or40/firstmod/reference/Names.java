@@ -11,5 +11,7 @@ public class Names
     public static class Blocks
     {
         public static final String FLAG = "flag";
+        public static final String FRAME = "frame";
+        public static final String ARROW = "arrow";
     }
 }
