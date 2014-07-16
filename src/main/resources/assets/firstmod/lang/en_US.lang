@@ -6,3 +6,6 @@ item.firstmod:torch.name=Torch of Liberty
 tile.firstmod:flag.name=American Flag
 tile.firstmod:frame.name=Frame
 tile.firstmod:arrow.name=Arrow Block
+
+# Creative Tab
+itemGroup.firstmod=First Mod

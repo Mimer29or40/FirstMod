@@ -46,7 +46,7 @@ public class FirstMod
         LogHelper.info("Initialization Started");
 
         FMLCommonHandler.instance().bus().register(instance);
-        ClientProxy.initRenderingAndTextures();
+        ClientProxy.initRenderers();
 
         LogHelper.info("Initialization Complete!");
         LogHelper.info("");

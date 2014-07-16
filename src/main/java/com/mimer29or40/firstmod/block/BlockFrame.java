@@ -1,6 +1,7 @@
 package com.mimer29or40.firstmod.block;
 
 import com.mimer29or40.firstmod.reference.Names;
+import com.mimer29or40.firstmod.reference.RenderIDs;
 import com.mimer29or40.firstmod.reference.Settings;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -56,6 +57,12 @@ public class BlockFrame extends BlockFM
     }
 
     @Override
+    public int getRenderType()
+    {
+        return RenderIDs.blockFrame;
+    }
+
+    @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister)
     {
@@ -65,7 +72,7 @@ public class BlockFrame extends BlockFM
         east = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1) + "_east");
         south = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1) + "_south");
         west = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1) + "_west");
-        blockIcon = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1) + "_top");
+        blockIcon = top;
     }
 
     @SideOnly(Side.CLIENT)
