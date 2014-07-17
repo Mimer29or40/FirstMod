@@ -1,15 +1,12 @@
 package com.mimer29or40.firstmod.client.render.block;
 
 import com.mimer29or40.firstmod.block.BlockArrow;
-import com.mimer29or40.firstmod.init.ModBlocks;
 import com.mimer29or40.firstmod.reference.RenderIDs;
-import com.mimer29or40.firstmod.util.LogHelper;
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderBlocks;
-import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 
 @SideOnly(Side.CLIENT)

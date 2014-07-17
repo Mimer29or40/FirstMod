@@ -3,7 +3,6 @@ package com.mimer29or40.firstmod.client.gui;
 import com.mimer29or40.firstmod.handler.ConfigurationHandler;
 import com.mimer29or40.firstmod.reference.Reference;
 import com.mimer29or40.firstmod.reference.Settings;
-import com.mimer29or40.firstmod.util.LogHelper;
 import cpw.mods.fml.client.config.DummyConfigElement;
 import cpw.mods.fml.client.config.GuiConfig;
 import cpw.mods.fml.client.config.GuiConfigEntries;
@@ -34,7 +33,6 @@ public class ConfigGUI extends GuiConfig
         list.add(new DummyConfigElement.DummyCategoryElement(sections.get(GeneralCategory.class), "info.firstmod.config.section.general", GeneralCategory.class));
         list.add(new DummyConfigElement.DummyCategoryElement(sections.get(RenderCategory.class), "info.firstmod.config.section.render", RenderCategory.class));
 
-        LogHelper.info(list);
         return list;
     }
 
@@ -48,7 +46,6 @@ public class ConfigGUI extends GuiConfig
         @Override
         protected GuiScreen buildChildScreen() {
             String category = sections.get(this.getClass());
-            LogHelper.info(category);
             return new GuiConfig(this.owningScreen, (new ConfigElement(ConfigurationHandler.config.getCategory(category.toLowerCase()))).getChildElements(), Reference.MOD_ID, category, this.configElement.requiresWorldRestart() || this.owningScreen.allRequireWorldRestart, this.configElement.requiresMcRestart() || this.owningScreen.allRequireMcRestart, GuiConfig.getAbridgedConfigPath(ConfigurationHandler.config.getConfigFile().getAbsolutePath()));
         }
     }

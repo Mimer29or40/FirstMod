@@ -2,13 +2,11 @@ package com.mimer29or40.firstmod.block;
 
 import com.mimer29or40.firstmod.creativeTab.CreativeTab;
 import com.mimer29or40.firstmod.reference.Textures;
-import com.mimer29or40.firstmod.util.LogHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.item.ItemStack;
 
 public class BlockFM extends Block
 {

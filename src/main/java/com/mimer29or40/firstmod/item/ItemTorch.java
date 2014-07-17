@@ -2,7 +2,6 @@ package com.mimer29or40.firstmod.item;
 
 import com.mimer29or40.firstmod.block.BlockArrow;
 import com.mimer29or40.firstmod.reference.Names;
-import com.mimer29or40.firstmod.util.LogHelper;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;

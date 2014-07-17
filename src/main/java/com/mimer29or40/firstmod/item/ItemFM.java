@@ -1,7 +1,6 @@
 package com.mimer29or40.firstmod.item;
 
 import com.mimer29or40.firstmod.creativeTab.CreativeTab;
-import com.mimer29or40.firstmod.reference.Reference;
 import com.mimer29or40.firstmod.reference.Textures;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
