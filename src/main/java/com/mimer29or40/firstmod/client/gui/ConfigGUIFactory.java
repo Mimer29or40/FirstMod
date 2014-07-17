@@ -6,7 +6,7 @@ import net.minecraft.client.gui.GuiScreen;
 
 import java.util.Set;
 
-public class GuiFactory implements IModGuiFactory
+public class ConfigGUIFactory implements IModGuiFactory
 {
 
     @Override
@@ -16,7 +16,7 @@ public class GuiFactory implements IModGuiFactory
 
     @Override
     public Class<? extends GuiScreen> mainConfigGuiClass() {
-        return ModGuiConfig.class;
+        return ConfigGUI.class;
     }
 
     @Override

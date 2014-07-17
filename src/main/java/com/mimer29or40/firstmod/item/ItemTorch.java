@@ -7,6 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.minecraftforge.common.util.ForgeDirection;
 
 public class ItemTorch extends ItemFM {
     public ItemTorch() {
@@ -27,23 +28,23 @@ public class ItemTorch extends ItemFM {
             }
             else
             {
-                switch (world.getBlockMetadata(x, y, z)) {
-                    case 0:
+                switch (ForgeDirection.getOrientation(world.getBlockMetadata(x, y, z))) {
+                    case DOWN:
                         world.setBlockMetadataWithNotify(x, y, z, 1, 3);
                         break;
-                    case 1:
+                    case UP:
                         world.setBlockMetadataWithNotify(x, y, z, 2, 3);
                         break;
-                    case 2:
+                    case NORTH:
                         world.setBlockMetadataWithNotify(x, y, z, 3, 3);
                         break;
-                    case 3:
+                    case SOUTH:
                         world.setBlockMetadataWithNotify(x, y, z, 4, 3);
                         break;
-                    case 4:
+                    case WEST:
                         world.setBlockMetadataWithNotify(x, y, z, 5, 3);
                         break;
-                    case 5:
+                    case EAST:
                         world.setBlockMetadataWithNotify(x, y, z, 0, 3);
                         break;
                 }

@@ -9,8 +9,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
-
-import javax.imageio.metadata.IIOMetadataController;
+import net.minecraftforge.common.util.ForgeDirection;
 
 public class BlockArrow extends BlockFM
 {
@@ -37,22 +36,23 @@ public class BlockArrow extends BlockFM
 
     @Override
     @SideOnly(Side.CLIENT)
-    public IIcon getIcon(int side, int meta)
+    public IIcon getIcon(int s, int meta)
     {
-        switch (meta)
+        ForgeDirection side = ForgeDirection.getOrientation(s);
+        switch (ForgeDirection.getOrientation(meta))
         {
-            case 0:
-                return side == 0 ? this.top : side == 1 ? this.bottom : this.blockIcon;
-            case 1:
-                return side == 1 ? this.top : side == 0 ? this.bottom : this.blockIcon;
-            case 2:
-                return side == 2 ? this.top : side == 3 ? this.bottom : this.blockIcon;
-            case 3:
-                return side == 3 ? this.top : side == 2 ? this.bottom : this.blockIcon;
-            case 4:
-                return side == 4 ? this.top : side == 5 ? this.bottom : this.blockIcon;
-            case 5:
-                return side == 5 ? this.top : side == 4 ? this.bottom : this.blockIcon;
+            case DOWN:
+                return side == ForgeDirection.DOWN ? this.top : side == ForgeDirection.UP ? this.bottom : this.blockIcon;
+            case UP:
+                return side == ForgeDirection.UP ? this.top : side == ForgeDirection.DOWN ? this.bottom : this.blockIcon;
+            case NORTH:
+                return side == ForgeDirection.NORTH ? this.top : side == ForgeDirection.SOUTH ? this.bottom : this.blockIcon;
+            case SOUTH:
+                return side == ForgeDirection.SOUTH ? this.top : side == ForgeDirection.NORTH ? this.bottom : this.blockIcon;
+            case WEST:
+                return side == ForgeDirection.WEST ? this.top : side == ForgeDirection.EAST ? this.bottom : this.blockIcon;
+            case EAST:
+                return side == ForgeDirection.EAST ? this.top : side == ForgeDirection.WEST ? this.bottom : this.blockIcon;
         }
         return this.blockIcon;
     }

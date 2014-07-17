@@ -2,6 +2,7 @@ package com.mimer29or40.firstmod.client.render.block;
 
 import com.mimer29or40.firstmod.block.BlockFrame;
 import com.mimer29or40.firstmod.reference.RenderIDs;
+import com.mimer29or40.firstmod.reference.Settings;
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -24,7 +25,7 @@ public class BlockFrameRenderer implements ISimpleBlockRenderingHandler
     {
         if (block instanceof BlockFrame)
         {
-            renderer.setRenderFromInside(true);
+            renderer.setRenderFromInside(Settings.RENDER_INSIDE);
             renderer.renderStandardBlock(block, x, y, z);
         }
         return true;

@@ -62,9 +62,14 @@ public class ConfigurationHandler
                 Settings.FLOAT_LABEL);
         Settings.RENDER_LIKE_GLASS = config.getBoolean(
                 Settings.RENDER_LIKE_GLASS_NAME,
-                Settings.CATEGORY_GENERAL,
+                Settings.CATEGORY_RENDER,
                 Settings.RENDER_LIKE_GLASS_DEFAULT,
                 Settings.RENDER_LIKE_GLASS_LABEL);
+        Settings.RENDER_INSIDE = config.getBoolean(
+                Settings.RENDER_INSIDE_NAME,
+                Settings.CATEGORY_RENDER,
+                Settings.RENDER_INSIDE_DEFAULT,
+                Settings.RENDER_INSIDE_LABEL);
 
         if (config.hasChanged())
         {

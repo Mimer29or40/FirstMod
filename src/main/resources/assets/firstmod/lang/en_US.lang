@@ -9,3 +9,9 @@ tile.firstmod:arrow.name=Arrow Block
 
 # Creative Tab
 itemGroup.firstmod=First Mod
+
+# GUI Factory
+info.firstmod.config.section.general=General
+info.firstmod.config.section.general.tooltip=General category for random stuff
+info.firstmod.config.section.render=Render
+info.firstmod.config.section.render.tooltip=Render category for some block rendering
