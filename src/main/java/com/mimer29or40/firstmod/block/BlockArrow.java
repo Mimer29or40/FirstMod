@@ -20,7 +20,6 @@ public class BlockArrow extends BlockFM
     {
         super();
         this.setBlockName(Names.Blocks.ARROW);
-        this.setBlockTextureName(Names.Blocks.ARROW);
     }
 
     @Override
@@ -64,7 +63,7 @@ public class BlockArrow extends BlockFM
     @Override
     public int onBlockPlaced(World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ, int metadata)
     {
-        world.setBlock(x, y, z, this, side, 1);
+        world.setBlock(x, y, z, this, side, 3);
         return side;
     }
 }

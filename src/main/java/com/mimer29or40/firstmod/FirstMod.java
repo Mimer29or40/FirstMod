@@ -3,6 +3,7 @@ package com.mimer29or40.firstmod;
 import com.mimer29or40.firstmod.handler.ConfigurationHandler;
 import com.mimer29or40.firstmod.init.ModBlocks;
 import com.mimer29or40.firstmod.init.ModItems;
+import com.mimer29or40.firstmod.init.Recipes;
 import com.mimer29or40.firstmod.proxy.ClientProxy;
 import com.mimer29or40.firstmod.proxy.IProxy;
 import com.mimer29or40.firstmod.reference.Reference;
@@ -12,6 +13,7 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.oredict.OreDictionary;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
 public class FirstMod
@@ -45,6 +47,8 @@ public class FirstMod
         LogHelper.info("");
         LogHelper.info("Initialization Started");
 
+        Recipes.init();
+
         FMLCommonHandler.instance().bus().register(instance);
         ClientProxy.initRenderers();
 
@@ -57,6 +61,11 @@ public class FirstMod
     {
         LogHelper.info("");
         LogHelper.info("Post Initialization Started");
+
+        for (String oreName : OreDictionary.getOreNames())
+        {
+            LogHelper.info(oreName);
+        }
 
         LogHelper.info("Post Initialization Complete!");
         LogHelper.info("");

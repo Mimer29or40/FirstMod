@@ -1,6 +1,7 @@
 package com.mimer29or40.firstmod.proxy;
 
 import com.mimer29or40.firstmod.client.render.block.BlockArrowRenderer;
+import com.mimer29or40.firstmod.client.render.block.BlockCrystalRenderer;
 import com.mimer29or40.firstmod.client.render.block.BlockFrameRenderer;
 import com.mimer29or40.firstmod.reference.RenderIDs;
 import cpw.mods.fml.client.registry.RenderingRegistry;
@@ -11,7 +12,10 @@ public class ClientProxy extends CommonProxy
     {
         RenderIDs.blockArrow = RenderingRegistry.getNextAvailableRenderId();
         RenderIDs.blockFrame = RenderingRegistry.getNextAvailableRenderId();
+        RenderIDs.blockCrystal = RenderingRegistry.getNextAvailableRenderId();
+
         RenderingRegistry.registerBlockHandler(new BlockArrowRenderer());
         RenderingRegistry.registerBlockHandler(new BlockFrameRenderer());
+        RenderingRegistry.registerBlockHandler(new BlockCrystalRenderer());
     }
 }
