@@ -12,6 +12,8 @@ public class ResourceLocationHelper
 
     public static ResourceLocation getResourceLocation(String path)
     {
+        if (path.startsWith(Reference.MOD_ID + ":"))
+            path.replace(":", "");
         return getResourceLocation(Reference.MOD_ID.toLowerCase(), path);
     }
 }

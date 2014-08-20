@@ -3,6 +3,7 @@ package com.mimer29or40.firstmod.block;
 import com.mimer29or40.firstmod.reference.Names;
 import com.mimer29or40.firstmod.reference.RenderIDs;
 import com.mimer29or40.firstmod.reference.Settings;
+import com.mimer29or40.firstmod.util.IconHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -61,13 +62,12 @@ public class BlockFrame extends BlockFM
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister)
     {
-        top = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1) + "_top");
-        bottom = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1) + "_bottom");
-        north = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1) + "_north");
-        east = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1) + "_east");
-        south = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1) + "_south");
-        west = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1) + "_west");
-        blockIcon = top;
+        top = IconHelper.forBlock(iconRegister, this, "_top");
+        bottom = IconHelper.forBlock(iconRegister, this, "_bottom");
+        north = IconHelper.forBlock(iconRegister, this, "_north");
+        east = IconHelper.forBlock(iconRegister, this, "_east");
+        south = IconHelper.forBlock(iconRegister, this, "_south");
+        west = IconHelper.forBlock(iconRegister, this, "_west");
     }
 
     @SideOnly(Side.CLIENT)

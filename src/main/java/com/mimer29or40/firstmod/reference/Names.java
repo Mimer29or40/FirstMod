@@ -2,18 +2,20 @@ package com.mimer29or40.firstmod.reference;
 
 public class Names
 {
-    public static class Items
+    public static final class Items
     {
         public static final String MAPLE_LEAF = "mapleLeaf";
         public static final String TORCH = "torch";
     }
 
-    public static class Blocks
+    public static final class Blocks
     {
         public static final String FLAG = "flag";
         public static final String FRAME = "frame";
         public static final String ARROW = "arrow";
         public static final String CRYSTAL = "crystal";
+        public static final String STARFIELD = "starfield";
+        public static final String NICS = "nics";
     }
 
     public static final class Tools
@@ -34,6 +36,13 @@ public class Names
     public static final class Weapons
     {
 
+    }
+
+    public static final class Keys
+    {
+        public static final String CATEGORY = "keys.firstmod.category";
+        public static final String CHARGE = "keys.firstmod.charge";
+        public static final String RELEASE = "keys.firstmod.release";
     }
 
     public static final class NBT

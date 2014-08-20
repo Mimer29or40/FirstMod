@@ -17,12 +17,19 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "1.7.10-0.0.1"
+version = "1.0"
 group= "com.mimer29or40.firstmod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "FirstMod"
 
-minecraft {
-    version = "1.7.10-10.13.0.1191"
+minecraft{version = "1.7.10-10.13.0.1207"}
+
+sourceSets.main{
+    java{
+        srcDirs 'src/main/java'
+    }
+    resources{
+        srcDirs 'src/main/resources'
+    }
 }
 
 dependencies {

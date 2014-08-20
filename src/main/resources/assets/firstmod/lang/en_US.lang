@@ -7,6 +7,8 @@ tile.firstmod:flag.name=American Flag
 tile.firstmod:frame.name=Frame
 tile.firstmod:arrow.name=Arrow Block
 tile.firstmod:crystal.name=Mysterious Crystal
+tile.firstmod:starfield.name=Starfield
+tile.firstmod:mics.name=Nics Block
 
 # Creative Tab
 itemGroup.firstmod=First Mod
@@ -16,3 +18,8 @@ info.firstmod.config.section.general=General
 info.firstmod.config.section.general.tooltip=General category for random stuff
 info.firstmod.config.section.render=Render
 info.firstmod.config.section.render.tooltip=Render category for some block rendering
+
+# Keys
+keys.firstmod.category=First Mod
+keys.firstmod.charge=Charge
+keys.firstmod.release=Release

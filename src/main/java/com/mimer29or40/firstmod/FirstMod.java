@@ -1,6 +1,9 @@
 package com.mimer29or40.firstmod;
 
+import com.mimer29or40.firstmod.client.handler.KeyInputEventHandler;
+import com.mimer29or40.firstmod.handler.ClientTickHandler;
 import com.mimer29or40.firstmod.handler.ConfigurationHandler;
+import com.mimer29or40.firstmod.handler.HUDHandler;
 import com.mimer29or40.firstmod.init.ModBlocks;
 import com.mimer29or40.firstmod.init.ModItems;
 import com.mimer29or40.firstmod.init.Recipes;
@@ -13,6 +16,7 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.oredict.OreDictionary;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
@@ -31,7 +35,13 @@ public class FirstMod
         LogHelper.info("Pre Initialization Started");
 
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
+
         FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
+        FMLCommonHandler.instance().bus().register(new ClientTickHandler());
+
+        MinecraftForge.EVENT_BUS.register(new HUDHandler());
+
+        proxy.registerKeyBindings();
 
         ModItems.init();
 
@@ -49,8 +59,9 @@ public class FirstMod
 
         Recipes.init();
 
-        FMLCommonHandler.instance().bus().register(instance);
-        ClientProxy.initRenderers();
+//        FMLCommonHandler.instance().bus().register(instance);
+        FMLCommonHandler.instance().bus().register(new KeyInputEventHandler());
+        ClientProxy.init();
 
         LogHelper.info("Initialization Complete!");
         LogHelper.info("");
