@@ -8,7 +8,8 @@ tile.firstmod:frame.name=Frame
 tile.firstmod:arrow.name=Arrow Block
 tile.firstmod:crystal.name=Mysterious Crystal
 tile.firstmod:starfield.name=Starfield
-tile.firstmod:mics.name=Nics Block
+tile.firstmod:nics.name=Nics Block
+tile.firstmod:ctm.name=CTM Test
 
 # Creative Tab
 itemGroup.firstmod=First Mod

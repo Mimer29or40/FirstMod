@@ -1,7 +1,6 @@
 package com.mimer29or40.firstmod.block;
 
 import com.mimer29or40.firstmod.reference.Names;
-import com.mimer29or40.firstmod.reference.RenderIDs;
 import com.mimer29or40.firstmod.reference.Settings;
 import com.mimer29or40.firstmod.util.IconHelper;
 import cpw.mods.fml.relauncher.Side;
@@ -53,12 +52,6 @@ public class BlockFrame extends BlockFM
     }
 
     @Override
-    public int getRenderType()
-    {
-        return RenderIDs.blockFrame;
-    }
-
-    @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister)
     {
@@ -70,6 +63,7 @@ public class BlockFrame extends BlockFM
         west = IconHelper.forBlock(iconRegister, this, "_west");
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int meta)
     {

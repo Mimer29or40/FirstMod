@@ -2,6 +2,8 @@ package com.mimer29or40.firstmod.util;
 
 import com.mimer29or40.firstmod.reference.Reference;
 import cpw.mods.fml.common.FMLLog;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.ChatComponentText;
 import org.apache.logging.log4j.Level;
 
 public class LogHelper
@@ -49,5 +51,10 @@ public class LogHelper
     public static void warn(Object object)
     {
         log(Level.WARN, object);
+    }
+
+    public static void chat(EntityPlayer player, Object object)
+    {
+        player.addChatComponentMessage(new ChatComponentText(String.valueOf(object)));
     }
 }

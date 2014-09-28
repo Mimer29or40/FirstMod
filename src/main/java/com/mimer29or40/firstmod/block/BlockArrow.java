@@ -1,18 +1,15 @@
 package com.mimer29or40.firstmod.block;
 
-import com.mimer29or40.firstmod.block.tile.TileArrow;
 import com.mimer29or40.firstmod.reference.Names;
-import com.mimer29or40.firstmod.reference.RenderIDs;
 import com.mimer29or40.firstmod.util.IconHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
-public class BlockArrow extends BlockFMContainer
+public class BlockArrow extends BlockFM
 {
     @SideOnly(Side.CLIENT)
     protected IIcon top;
@@ -58,31 +55,9 @@ public class BlockArrow extends BlockFMContainer
     }
 
     @Override
-    public int getRenderType()
-    {
-        return RenderIDs.blockArrow;
-    }
-
-    @Override
     public int onBlockPlaced(World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ, int metadata)
     {
         world.setBlock(x, y, z, this, side, 3);
         return side;
-    }
-
-    @Override
-    public boolean isOpaqueCube()
-    {
-        return false;
-    }
-
-    @Override
-    public TileEntity createNewTileEntity(World world, int meta) {
-        return new TileArrow();
-    }
-
-    @Override
-    public boolean renderAsNormalBlock() {
-        return false;
     }
 }

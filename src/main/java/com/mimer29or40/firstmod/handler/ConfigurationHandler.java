@@ -36,30 +36,11 @@ public class ConfigurationHandler
     {
         LogHelper.info("Loading Config...");
 
-        Settings.booleanValue = config.getBoolean(
-                Settings.BOOLEAN_NAME,
+        Settings.debug = config.getBoolean(
+                Settings.DEBUG_NAME,
                 Settings.CATEGORY_GENERAL,
-                Settings.BOOLEAN_DEFAULT,
-                Settings.BOOLEAN_LABEL);
-        Settings.intValue = config.getInt(
-                Settings.INT_NAME,
-                Settings.CATEGORY_GENERAL,
-                Settings.INT_DEFAULT,
-                Settings.INT_MIN,
-                Settings.INT_MAX,
-                Settings.INT_LABEL);
-        Settings.stringValue = config.getString(
-                Settings.STRING_NAME,
-                Settings.CATEGORY_GENERAL,
-                Settings.STRING_DEFAULT,
-                Settings.STRING_LABEL);
-        Settings.floatValue = config.getFloat(
-                Settings.FLOAT_NAME,
-                Settings.CATEGORY_GENERAL,
-                Settings.FLOAT_DEFAULT,
-                Settings.FLOAT_MIN,
-                Settings.FLOAT_MAX,
-                Settings.FLOAT_LABEL);
+                Settings.DEBUG_DEFAULT,
+                Settings.DEBUG_LABEL);
         Settings.RENDER_LIKE_GLASS = config.getBoolean(
                 Settings.RENDER_LIKE_GLASS_NAME,
                 Settings.CATEGORY_RENDER,

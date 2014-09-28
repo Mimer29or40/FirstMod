@@ -14,8 +14,8 @@ public class Names
         public static final String FRAME = "frame";
         public static final String ARROW = "arrow";
         public static final String CRYSTAL = "crystal";
-        public static final String STARFIELD = "starfield";
         public static final String NICS = "nics";
+        public static final String CTM = "ctm";
     }
 
     public static final class Tools

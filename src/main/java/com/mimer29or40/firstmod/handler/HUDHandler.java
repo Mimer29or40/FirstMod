@@ -1,17 +1,13 @@
 package com.mimer29or40.firstmod.handler;
 
-import com.mimer29or40.firstmod.block.BlockCrystal;
 import com.mimer29or40.firstmod.util.IInfo;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.util.MovingObjectPosition;
-import net.minecraft.util.StatCollector;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import org.lwjgl.opengl.GL11;
-
-import java.awt.*;
 
 public final class HUDHandler
 {
@@ -44,23 +40,4 @@ public final class HUDHandler
         mc.fontRenderer.drawStringWithShadow(text, x, y, 0x00FFFFFF);
         GL11.glDisable(GL11.GL_BLEND);
     }
-
-//    public static void renderManaBar(int x, int y, int color, float alpha, int mana, int maxMana) {
-//        Minecraft mc = Minecraft.getMinecraft();
-//
-//        GL11.glColor4f(1F, 1F, 1F, alpha);
-//        mc.renderEngine.bindTexture(manaBar);
-//        RenderHelper.drawTexturedModalRect(x, y, 0, 0, 0, 102, 5);
-//
-//        int manaPercentage = Math.max(0, (int) ((double) mana / (double) maxMana * 100));
-//
-//        if(manaPercentage == 0 && mana > 0)
-//            manaPercentage = 1;
-//
-//        RenderHelper.drawTexturedModalRect(x + 1 + manaPercentage, y + 1, 0, 0, 5, 100 - manaPercentage, 3);
-//
-//        Color color_ = new Color(color);
-//        GL11.glColor4ub((byte) color_.getRed(), (byte) color_.getGreen(),(byte) color_.getBlue(), (byte) (255F * alpha));
-//        RenderHelper.drawTexturedModalRect(x + 1, y + 1, 0, 0, 5, manaPercentage, 3);
-//    }
 }

@@ -10,12 +10,17 @@ public class IconHelper
 {
     public static IIcon forName(IIconRegister ir, String name)
     {
-        return ir.registerIcon(name);
+        return ir.registerIcon(Textures.RESOURCE_PREFIX + name);
+    }
+
+    public static IIcon forDir(IIconRegister ir,String name, String dir)
+    {
+        return forName(ir, dir+ "/" + name);
     }
 
     public static IIcon forBlock(IIconRegister ir, Block block)
     {
-        return forName(ir, block.getUnlocalizedName().replaceAll("tile\\.", ""));
+        return forName(ir, block.getUnlocalizedName().replaceAll("tile\\.", "").replace(Textures.RESOURCE_PREFIX, ""));
     }
 
     public static IIcon forBlock(IIconRegister ir, Block block, int i)
@@ -30,17 +35,17 @@ public class IconHelper
 
     public static IIcon forBlock(IIconRegister ir, Block block, String s)
     {
-        return forName(ir, block.getUnlocalizedName().replaceAll("tile\\.", "") + s);
+        return forName(ir, block.getUnlocalizedName().replaceAll("tile\\.", "").replace(Textures.RESOURCE_PREFIX, "") + s);
     }
 
     public static IIcon forBlock(IIconRegister ir, Block block, String s, String dir)
     {
-        return forName(ir, dir + "/" + block.getUnlocalizedName().replaceAll("tile\\.", "") + s);
+        return forName(ir, dir + "/" + block.getUnlocalizedName().replaceAll("tile\\.", "").replace(Textures.RESOURCE_PREFIX, "") + s);
     }
 
     public static IIcon forItem(IIconRegister ir, Item item)
     {
-        return forName(ir, item.getUnlocalizedName().replaceAll("item\\.", ""));
+        return forName(ir, item.getUnlocalizedName().replaceAll("item\\.", "").replace(Textures.RESOURCE_PREFIX, ""));
     }
 
     public static IIcon forItem(IIconRegister ir, Item item, int i)
@@ -50,6 +55,6 @@ public class IconHelper
 
     public static IIcon forItem(IIconRegister ir, Item item, String s)
     {
-        return forName(ir, item.getUnlocalizedName().replaceAll("item\\.", "") + s);
+        return forName(ir, item.getUnlocalizedName().replaceAll("item\\.", "").replace(Textures.RESOURCE_PREFIX, "") + s);
     }
 }
