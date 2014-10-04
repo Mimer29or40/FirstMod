@@ -2,7 +2,7 @@ package com.mimer29or40.firstmod.block;
 
 import com.mimer29or40.firstmod.reference.Names;
 import com.mimer29or40.firstmod.reference.Settings;
-import com.mimer29or40.firstmod.util.IconHelper;
+import com.mimer29or40.firstmod.util.helpers.IconHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -35,7 +35,7 @@ public class BlockFrame extends BlockFM
     @Override
     public boolean shouldSideBeRendered(IBlockAccess blockAccess, int x, int y, int z, int side)
     {
-        return blockAccess.getBlock(x, y, z)!=this || !Settings.RENDER_LIKE_GLASS;
+        return blockAccess.getBlock(x, y, z)!=this || !(Boolean) Settings.RenderLikeGlass.getValue();
     }
 
     @Override

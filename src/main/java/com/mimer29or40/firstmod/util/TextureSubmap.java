@@ -1,5 +1,6 @@
 package com.mimer29or40.firstmod.util;
 
+import com.mimer29or40.firstmod.util.helpers.LogHelper;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.util.IIcon;
 import net.minecraftforge.client.event.TextureStitchEvent;
@@ -24,13 +25,23 @@ public class TextureSubmap
     @SubscribeEvent
     public void TexturesStitched(TextureStitchEvent.Post event)
     {
-
-        for(int x = 0; x < width; x++)
+        for(int y = 0; y < width; y++)
         {
-            for(int y = 0; y < height; y++)
+            for(int x = 0; x < height; x++)
             {
                 icons[y * width + x] = new TextureVirtual(icon, width, height, x, y);
             }
         }
+    }
+
+    public IIcon getIcon(int x, int y)
+    {
+        x--; y--;
+        return icons[y * width + x];
+    }
+
+    public void printInfo()
+    {
+        LogHelper.infoS("Icon Name: %s Width: %s Height: %s", icon.getIconName(), width, height);
     }
 }

@@ -1,5 +1,6 @@
-package com.mimer29or40.firstmod.util;
+package com.mimer29or40.firstmod.util.helpers;
 
+import com.mimer29or40.firstmod.util.Vector3;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;

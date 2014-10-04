@@ -1,4 +1,4 @@
-package com.mimer29or40.firstmod.util;
+package com.mimer29or40.firstmod.util.helpers;
 
 import com.mimer29or40.firstmod.reference.Textures;
 import net.minecraft.block.Block;
@@ -13,7 +13,7 @@ public class IconHelper
         return ir.registerIcon(Textures.RESOURCE_PREFIX + name);
     }
 
-    public static IIcon forDir(IIconRegister ir,String name, String dir)
+    public static IIcon forDir(IIconRegister ir, String name, String dir)
     {
         return forName(ir, dir+ "/" + name);
     }

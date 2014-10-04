@@ -1,16 +1,16 @@
 package com.mimer29or40.firstmod;
 
 import com.mimer29or40.firstmod.client.handler.KeyInputEventHandler;
-import com.mimer29or40.firstmod.handler.ClientTickHandler;
+import com.mimer29or40.firstmod.client.handler.ClientTickHandler;
 import com.mimer29or40.firstmod.handler.ConfigurationHandler;
-import com.mimer29or40.firstmod.handler.HUDHandler;
+import com.mimer29or40.firstmod.client.handler.HUDHandler;
 import com.mimer29or40.firstmod.init.ModBlocks;
 import com.mimer29or40.firstmod.init.ModItems;
 import com.mimer29or40.firstmod.init.Recipes;
 import com.mimer29or40.firstmod.proxy.ClientProxy;
 import com.mimer29or40.firstmod.proxy.IProxy;
 import com.mimer29or40.firstmod.reference.Reference;
-import com.mimer29or40.firstmod.util.LogHelper;
+import com.mimer29or40.firstmod.util.helpers.LogHelper;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;

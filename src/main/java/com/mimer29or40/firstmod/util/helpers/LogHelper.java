@@ -1,4 +1,4 @@
-package com.mimer29or40.firstmod.util;
+package com.mimer29or40.firstmod.util.helpers;
 
 import com.mimer29or40.firstmod.reference.Reference;
 import cpw.mods.fml.common.FMLLog;
@@ -36,6 +36,11 @@ public class LogHelper
     public static void info(Object object)
     {
         log(Level.INFO, object);
+    }
+
+    public static void infoS(String format, Object... args)
+    {
+        info(String.format(format,args));
     }
 
     public static void off(Object object)

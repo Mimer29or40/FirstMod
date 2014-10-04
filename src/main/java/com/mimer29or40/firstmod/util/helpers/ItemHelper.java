@@ -1,4 +1,4 @@
-package com.mimer29or40.firstmod.util;
+package com.mimer29or40.firstmod.util.helpers;
 
 import com.mimer29or40.firstmod.reference.Messages;
 import com.mimer29or40.firstmod.reference.Names;

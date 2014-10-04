@@ -1,6 +1,6 @@
 package com.mimer29or40.firstmod.reference;
 
-import com.mimer29or40.firstmod.util.ResourceLocationHelper;
+import com.mimer29or40.firstmod.util.helpers.ResourceLocationHelper;
 import net.minecraft.util.ResourceLocation;
 
 public class Textures
@@ -17,14 +17,16 @@ public class Textures
 
         public static final class CTM
         {
-            public static final String CTM_TEXTURES = BLOCK_TEXTURES + "ctm/";
-            public static final ResourceLocation CTM = ResourceLocationHelper.getResourceLocation(CTM_TEXTURES + "ctm.png");
+            public static final String TEST_TEXTURES = "test/";
+            public static final ResourceLocation TEST = ResourceLocationHelper.getResourceLocation(TEST_TEXTURES + "test.png");
         }
     }
 
     public static final class Item
     {
         public static final String ITEM_TEXTURES = "textures/items/";
+        public static final ResourceLocation TORCH = ResourceLocationHelper.getResourceLocation(ITEM_TEXTURES + "torch.png");
+        public static final ResourceLocation MAPLE_LEAF = ResourceLocationHelper.getResourceLocation(ITEM_TEXTURES + "mapleLeaf.png");
     }
 
     public static final class Gui

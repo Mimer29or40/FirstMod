@@ -1,6 +1,6 @@
 package com.mimer29or40.firstmod.init;
 
-import com.mimer29or40.firstmod.util.CraftingHelper;
+import com.mimer29or40.firstmod.util.helpers.CraftingHelper;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 

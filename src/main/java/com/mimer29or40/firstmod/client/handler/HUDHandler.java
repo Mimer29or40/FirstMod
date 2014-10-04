@@ -1,4 +1,4 @@
-package com.mimer29or40.firstmod.handler;
+package com.mimer29or40.firstmod.client.handler;
 
 import com.mimer29or40.firstmod.util.IInfo;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
@@ -9,7 +9,7 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import org.lwjgl.opengl.GL11;
 
-public final class HUDHandler
+public class HUDHandler
 {
     @SubscribeEvent
     public void onDrawScreen(RenderGameOverlayEvent.Post event)

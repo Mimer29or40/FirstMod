@@ -1,4 +1,4 @@
-package com.mimer29or40.firstmod.util;
+package com.mimer29or40.firstmod.util.helpers;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;

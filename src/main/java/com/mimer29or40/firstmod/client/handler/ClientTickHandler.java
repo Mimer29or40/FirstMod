@@ -1,4 +1,4 @@
-package com.mimer29or40.firstmod.handler;
+package com.mimer29or40.firstmod.client.handler;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent.ClientTickEvent;

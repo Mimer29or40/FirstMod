@@ -1,7 +1,7 @@
 package com.mimer29or40.firstmod.block;
 
 import com.mimer29or40.firstmod.reference.Names;
-import com.mimer29or40.firstmod.util.IconHelper;
+import com.mimer29or40.firstmod.util.helpers.IconHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
