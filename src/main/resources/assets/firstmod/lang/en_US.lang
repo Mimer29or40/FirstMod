@@ -11,6 +11,10 @@ tile.firstmod:starfield.name=Starfield
 tile.firstmod:nics.name=Nics Block
 tile.firstmod:test.name=CTM Test
 tile.firstmod:window.name=Window
+tile.firstmod:glass_black.name=Black Stained Glass
+tile.firstmod:redrock.name=Red Cobblestone
+tile.firstmod:redrock_raw.name=Red Rock
+tile.firstmod:redrock_smooth.name=Smooth Red Rock
 
 # Creative Tab
 itemGroup.firstmod=First Mod
