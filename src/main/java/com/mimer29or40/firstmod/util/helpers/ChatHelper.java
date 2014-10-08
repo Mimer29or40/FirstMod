@@ -9,10 +9,17 @@ public class ChatHelper {
         player.addChatComponentMessage(new ChatComponentText(String.valueOf(object)));
     }
 
-    public static void toAll(Object object) {
+    public static void toAllPlayers(Object object)
+    {
         for (String name : MinecraftServer.getServer().getAllUsernames()) {
             LogHelper.info(name);//TODO
+            MinecraftServer.getServer().addChatMessage(new ChatComponentText(String.valueOf(object)));
         }
+    }
+
+    public static void toServer(Object object)
+    {
+
     }
 
     public static final class Format {
