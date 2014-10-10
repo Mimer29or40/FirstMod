@@ -7,28 +7,31 @@ import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.util.IIcon;
 
-public class RenderBlocksCTM extends RenderBlocks {
+public class RenderBlocksCTM extends RenderBlocks
+{
     Tessellator tessellator;
     double[] X = new double[52];
     double[] Y = new double[52];
     double[] Z = new double[52];
     double[] U = new double[52];
     double[] V = new double[52];
-    int[] L = new int[52];
-    float[] R = new float[52];
-    float[] G = new float[52];
-    float[] B = new float[52];
+    int[]    L = new int[52];
+    float[]  R = new float[52];
+    float[]  G = new float[52];
+    float[]  B = new float[52];
     TextureSubmap test;
-    boolean isOpaque;
-    int bx, by, bz;
+    boolean       isOpaque;
+    int           bx, by, bz;
 
-    RenderBlocksCTM() {
+    RenderBlocksCTM()
+    {
         super();
         resetVertices();
     }
 
     @Override
-    public boolean renderStandardBlock(Block block, int x, int y, int z) {
+    public boolean renderStandardBlock(Block block, int x, int y, int z)
+    {
         bx = x;
         by = y;
         bz = z;
@@ -39,12 +42,13 @@ public class RenderBlocksCTM extends RenderBlocks {
 
         boolean res = super.renderStandardBlock(block, x, y, z);
 
-        tessellator.addTranslation(-x, -y, -z);
+        tessellator.addTranslation(- x, - y, - z);
 
         return res;
     }
 
-    void setupSides(int a, int b, int c, int d, int xa, int xb, int xc, int xd, int e) {
+    void setupSides(int a, int b, int c, int d, int xa, int xb, int xc, int xd, int e)
+    {
         L[a] = brightnessBottomLeft;
         L[b] = brightnessBottomRight;
         L[c] = brightnessTopRight;
@@ -88,7 +92,8 @@ public class RenderBlocksCTM extends RenderBlocks {
         B[xd] = (B[d] + B[a]) / 2;
     }
 
-    void side(int a, int b, int c, int d, int iconIndex, CTMHelper.Rotation rotation, boolean inside) {
+    void side(int a, int b, int c, int d, int iconIndex, CTMHelper.Rotation rotation, boolean inside)
+    {
         IIcon icon = test.getIcon(iconIndex);
 
         double maxU = icon.getMaxU();
@@ -98,7 +103,8 @@ public class RenderBlocksCTM extends RenderBlocks {
 
         double[] newUV = CTMHelper.Rotation.flipUV(rotation, minU, maxU, minV, maxV);
 
-        if (inside) {
+        if (inside)
+        {
             a += 26;
             b += 26;
             c += 26;
@@ -121,8 +127,10 @@ public class RenderBlocksCTM extends RenderBlocks {
         vert(d);
     }
 
-    void vert(int index) {
-        if (enableAO) {
+    void vert(int index)
+    {
+        if (enableAO)
+        {
             tessellator.setColorOpaque_F(R[index], G[index], B[index]);
             tessellator.setBrightness(L[index]);
         }
@@ -131,7 +139,8 @@ public class RenderBlocksCTM extends RenderBlocks {
     }
 
     @Override
-    public void renderFaceXNeg(Block block, double x, double y, double z, IIcon icon) {
+    public void renderFaceXNeg(Block block, double x, double y, double z, IIcon icon)
+    {
         int tex[] = CTMHelper.getSubmapInfo(blockAccess, bx, by, bz, 4);
 
         setupSides(1, 0, 4, 5, 8, 12, 16, 13, 21);
@@ -139,15 +148,20 @@ public class RenderBlocksCTM extends RenderBlocks {
         side(13, 21, 16, 5, tex[1], CTMHelper.Rotation.None, false);
         side(8, 0, 12, 21, tex[2], CTMHelper.Rotation.None, false);
         side(21, 12, 4, 16, tex[3], CTMHelper.Rotation.None, false);
-        if (!isOpaque)
+        if (! isOpaque) //TODO texture is black on inside
+        {
+            enableAO = false;
             side(13, 21, 8, 1, tex[0], CTMHelper.Rotation.FlipHorizontal, true);
-        side(5, 16, 21, 13, tex[1], CTMHelper.Rotation.FlipHorizontal, true);
-        side(21, 12, 0, 8, tex[2], CTMHelper.Rotation.FlipHorizontal, true);
-        side(16, 4, 12, 21, tex[3], CTMHelper.Rotation.FlipHorizontal, true);
+            side(5, 16, 21, 13, tex[1], CTMHelper.Rotation.FlipHorizontal, true);
+            side(21, 12, 0, 8, tex[2], CTMHelper.Rotation.FlipHorizontal, true);
+            side(16, 4, 12, 21, tex[3], CTMHelper.Rotation.FlipHorizontal, true);
+            enableAO = true;
+        }
     }
 
     @Override
-    public void renderFaceXPos(Block block, double x, double y, double z, IIcon icon) {
+    public void renderFaceXPos(Block block, double x, double y, double z, IIcon icon)
+    {
         int tex[] = CTMHelper.getSubmapInfo(blockAccess, bx, by, bz, 5);
 
         setupSides(3, 2, 6, 7, 10, 14, 18, 15, 23);
@@ -155,15 +169,20 @@ public class RenderBlocksCTM extends RenderBlocks {
         side(14, 23, 10, 2, tex[1], CTMHelper.Rotation.None, false);
         side(18, 7, 15, 23, tex[2], CTMHelper.Rotation.None, false);
         side(23, 15, 3, 10, tex[3], CTMHelper.Rotation.None, false);
-        if (!isOpaque)
+        if (! isOpaque)
+        {
+            enableAO = false;
             side(14, 23, 18, 6, tex[0], CTMHelper.Rotation.FlipHorizontal, true);
-        side(2, 10, 23, 14, tex[1], CTMHelper.Rotation.FlipHorizontal, true);
-        side(23, 15, 7, 18, tex[2], CTMHelper.Rotation.FlipHorizontal, true);
-        side(10, 3, 15, 23, tex[3], CTMHelper.Rotation.FlipHorizontal, true);
+            side(2, 10, 23, 14, tex[1], CTMHelper.Rotation.FlipHorizontal, true);
+            side(23, 15, 7, 18, tex[2], CTMHelper.Rotation.FlipHorizontal, true);
+            side(10, 3, 15, 23, tex[3], CTMHelper.Rotation.FlipHorizontal, true);
+            enableAO = true;
+        }
     }
 
     @Override
-    public void renderFaceZNeg(Block block, double x, double y, double z, IIcon icon) {
+    public void renderFaceZNeg(Block block, double x, double y, double z, IIcon icon)
+    {
         int tex[] = CTMHelper.getSubmapInfo(blockAccess, bx, by, bz, 2);
 
         setupSides(2, 3, 0, 1, 10, 11, 8, 9, 20);
@@ -171,15 +190,20 @@ public class RenderBlocksCTM extends RenderBlocks {
         side(9, 20, 8, 1, tex[1], CTMHelper.Rotation.None, false);
         side(10, 3, 11, 20, tex[2], CTMHelper.Rotation.None, false);
         side(20, 11, 0, 8, tex[3], CTMHelper.Rotation.None, false);
-        if (!isOpaque)
+        if (! isOpaque)
+        {
+            enableAO = false;
             side(9, 20, 10, 2, tex[0], CTMHelper.Rotation.FlipHorizontal, true);
-        side(1, 8, 20, 9, tex[1], CTMHelper.Rotation.FlipHorizontal, true);
-        side(20, 11, 3, 10, tex[2], CTMHelper.Rotation.FlipHorizontal, true);
-        side(8, 0, 11, 20, tex[3], CTMHelper.Rotation.FlipHorizontal, true);
+            side(1, 8, 20, 9, tex[1], CTMHelper.Rotation.FlipHorizontal, true);
+            side(20, 11, 3, 10, tex[2], CTMHelper.Rotation.FlipHorizontal, true);
+            side(8, 0, 11, 20, tex[3], CTMHelper.Rotation.FlipHorizontal, true);
+            enableAO = true;
+        }
     }
 
     @Override
-    public void renderFaceZPos(Block block, double x, double y, double z, IIcon icon) {
+    public void renderFaceZPos(Block block, double x, double y, double z, IIcon icon)
+    {
         int tex[] = CTMHelper.getSubmapInfo(blockAccess, bx, by, bz, 3);
 
         setupSides(4, 7, 6, 5, 19, 18, 17, 16, 25);
@@ -187,15 +211,20 @@ public class RenderBlocksCTM extends RenderBlocks {
         side(17, 25, 18, 6, tex[1], CTMHelper.Rotation.None, false);
         side(16, 4, 19, 25, tex[2], CTMHelper.Rotation.None, false);
         side(25, 19, 7, 18, tex[3], CTMHelper.Rotation.None, false);
-        if (!isOpaque)
+        if (! isOpaque)
+        {
+            enableAO = false;
             side(17, 25, 16, 5, tex[0], CTMHelper.Rotation.FlipHorizontal, true);
-        side(6, 18, 25, 17, tex[1], CTMHelper.Rotation.FlipHorizontal, true);
-        side(25, 19, 4, 16, tex[2], CTMHelper.Rotation.FlipHorizontal, true);
-        side(18, 7, 19, 25, tex[3], CTMHelper.Rotation.FlipHorizontal, true);
+            side(6, 18, 25, 17, tex[1], CTMHelper.Rotation.FlipHorizontal, true);
+            side(25, 19, 4, 16, tex[2], CTMHelper.Rotation.FlipHorizontal, true);
+            side(18, 7, 19, 25, tex[3], CTMHelper.Rotation.FlipHorizontal, true);
+            enableAO = true;
+        }
     }
 
     @Override
-    public void renderFaceYNeg(Block block, double x, double y, double z, IIcon icon) {
+    public void renderFaceYNeg(Block block, double x, double y, double z, IIcon icon)
+    {
         int tex[] = CTMHelper.getSubmapInfo(blockAccess, bx, by, bz, 0);
 
         setupSides(0, 3, 7, 4, 11, 15, 19, 12, 24);
@@ -203,15 +232,20 @@ public class RenderBlocksCTM extends RenderBlocks {
         side(19, 24, 15, 7, tex[3], CTMHelper.Rotation.FlipVertical, false);
         side(12, 0, 11, 24, tex[0], CTMHelper.Rotation.FlipVertical, false);
         side(24, 11, 3, 15, tex[1], CTMHelper.Rotation.FlipVertical, false);
-        if (!isOpaque)
+        if (! isOpaque)
+        {
+            enableAO = false;
             side(19, 24, 12, 4, tex[2], CTMHelper.Rotation.FlipBoth, true);
-        side(7, 15, 24, 19, tex[3], CTMHelper.Rotation.FlipBoth, true);
-        side(24, 11, 0, 12, tex[0], CTMHelper.Rotation.FlipBoth, true);
-        side(15, 3, 11, 24, tex[1], CTMHelper.Rotation.FlipBoth, true);
+            side(7, 15, 24, 19, tex[3], CTMHelper.Rotation.FlipBoth, true);
+            side(24, 11, 0, 12, tex[0], CTMHelper.Rotation.FlipBoth, true);
+            side(15, 3, 11, 24, tex[1], CTMHelper.Rotation.FlipBoth, true);
+            enableAO = true;
+        }
     }
 
     @Override
-    public void renderFaceYPos(Block block, double x, double y, double z, IIcon icon) {
+    public void renderFaceYPos(Block block, double x, double y, double z, IIcon icon)
+    {
         int tex[] = CTMHelper.getSubmapInfo(blockAccess, bx, by, bz, 1);
 
         setupSides(2, 1, 5, 6, 9, 13, 17, 14, 22);
@@ -219,14 +253,19 @@ public class RenderBlocksCTM extends RenderBlocks {
         side(9, 22, 14, 2, tex[1], CTMHelper.Rotation.None, false);
         side(13, 5, 17, 22, tex[2], CTMHelper.Rotation.None, false);
         side(22, 17, 6, 14, tex[3], CTMHelper.Rotation.None, false);
-        if (!isOpaque)
+        if (! isOpaque)
+        {
+            enableAO = false;
             side(9, 22, 13, 1, tex[0], CTMHelper.Rotation.FlipHorizontal, true);
-        side(2, 14, 22, 9, tex[1], CTMHelper.Rotation.FlipHorizontal, true);
-        side(22, 17, 5, 13, tex[2], CTMHelper.Rotation.FlipHorizontal, true);
-        side(14, 6, 17, 22, tex[3], CTMHelper.Rotation.FlipHorizontal, true);
+            side(2, 14, 22, 9, tex[1], CTMHelper.Rotation.FlipHorizontal, true);
+            side(22, 17, 5, 13, tex[2], CTMHelper.Rotation.FlipHorizontal, true);
+            side(14, 6, 17, 22, tex[3], CTMHelper.Rotation.FlipHorizontal, true);
+            enableAO = true;
+        }
     }
 
-    void resetVertices() {
+    void resetVertices()
+    {
         X[0] = 0;
         Z[0] = 0;
         Y[0] = 0;
@@ -331,27 +370,46 @@ public class RenderBlocksCTM extends RenderBlocks {
         Z[25] = 1;
         Y[25] = 0.5;
 
-        for (int i = 0; i < 26; i++) {
+        for (int i = 0; i < 26; i++)
+        {
             if (X[i] == 0)
+            {
                 X[i + 26] = 0.0001;
+            }
             else if (X[i] == 0.5)
+            {
                 X[i + 26] = 0.5;
+            }
             else
+            {
                 X[i + 26] = 0.9999;
+            }
 
             if (Z[i] == 0)
+            {
                 Z[i + 26] = 0.0001;
+            }
             else if (Z[i] == 0.5)
+            {
                 Z[i + 26] = 0.5;
+            }
             else
+            {
                 Z[i + 26] = 0.9999;
+            }
 
             if (Y[i] == 0)
+            {
                 Y[i + 26] = 0.0001;
+            }
             else if (Y[i] == 0.5)
+            {
                 Y[i + 26] = 0.5;
+            }
             else
+            {
                 Y[i + 26] = 0.9999;
+            }
         }
     }
 }

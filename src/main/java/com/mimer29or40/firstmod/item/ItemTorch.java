@@ -10,7 +10,8 @@ import net.minecraft.world.World;
 
 public class ItemTorch extends ItemFM
 {
-    public ItemTorch() {
+    public ItemTorch()
+    {
         super();
         this.setUnlocalizedName(Names.Items.TORCH);
     }
@@ -21,8 +22,8 @@ public class ItemTorch extends ItemFM
         Block block = world.getBlock(x, y, z);
         if (block instanceof BlockFM)
         {
-            ChatHelper.toPlayer(player, String.format("Block: %s Hit: (%s,%s,%s)", block.getUnlocalizedName(), hitX, hitY, hitZ));
-            ChatHelper.toAll("Everbody");
+            //            ChatHelper.toPlayer(player, String.format("Block: %s Hit: (%s,%s,%s)", block.getUnlocalizedName(), hitX, hitY, hitZ));
+            ChatHelper.toAllPlayers("Everbody");
             return true;
         }
         return false;

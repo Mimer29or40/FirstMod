@@ -4,25 +4,33 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentText;
 
-public class ChatHelper {
-    public static void toPlayer(EntityPlayer player, Object object) {
-        player.addChatComponentMessage(new ChatComponentText(String.valueOf(object)));
+public class ChatHelper
+{
+    public static void toPlayer(EntityPlayer player, Object object)
+    {
+        player.addChatComponentMessage(chatText(object));
     }
 
-    public static void toAllPlayers(Object object)
+    public static void toAllPlayers(Object object)// TODO \/ throws null exception
     {
-        for (String name : MinecraftServer.getServer().getAllUsernames()) {
-            LogHelper.info(name);//TODO
-            MinecraftServer.getServer().addChatMessage(new ChatComponentText(String.valueOf(object)));
+        for (Object name : MinecraftServer.getServer().getConfigurationManager().playerEntityList)
+        {
+            ((EntityPlayer) name).addChatComponentMessage(chatText(object));
         }
     }
 
     public static void toServer(Object object)
     {
-
+        MinecraftServer.getServer().addChatMessage(chatText(object));
     }
 
-    public static final class Format {
+    private static ChatComponentText chatText(Object object)
+    {
+        return new ChatComponentText(String.valueOf(object));
+    }
+
+    public static final class Format
+    {
         public static final String BLACK = "§0";
         public static final String DARK_BLUE = "§1";
         public static final String DARK_GREEN = "§2";

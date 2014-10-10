@@ -7,29 +7,35 @@ import com.mimer29or40.firstmod.util.CTMBlock;
 import com.mimer29or40.firstmod.util.Drawing;
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import cpw.mods.fml.client.registry.RenderingRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.world.IBlockAccess;
 import org.lwjgl.opengl.GL11;
 
-public class CTMRender implements ISimpleBlockRenderingHandler {
+@SideOnly(Side.CLIENT)
+public class CTMRender implements ISimpleBlockRenderingHandler
+{
     RenderBlocksCTM rendererCTM = new RenderBlocksCTM();
 
-    public CTMRender() {
-        if (RenderIDs.blockCTM == 0)
-            RenderIDs.blockCTM = RenderingRegistry.getNextAvailableRenderId();
+    public CTMRender()
+    {
+        if (RenderIDs.blockCTM == 0) RenderIDs.blockCTM = RenderingRegistry.getNextAvailableRenderId();
     }
 
     @Override
-    public void renderInventoryBlock(Block block, int metadata, int modelId, RenderBlocks renderer) {
+    public void renderInventoryBlock(Block block, int metadata, int modelId, RenderBlocks renderer)
+    {
         CTMHandler ctmHandler = ((BlockCTM) block).ctmHandler;
-        GL11.glTranslatef(-0.5F, -0.5F, -0.5F);
+        GL11.glTranslatef(- 0.5F, - 0.5F, - 0.5F);
         Drawing.drawBlock(block, ctmHandler.getIcon(0, metadata), renderer);
         GL11.glTranslatef(0.5F, 0.5F, 0.5F);
     }
 
     @Override
-    public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z, Block block, int modelId, RenderBlocks renderer) {
+    public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z, Block block, int modelId, RenderBlocks renderer)
+    {
         CTMBlock ctmBlock = ((BlockCTM) block).ctmHandler.ctmBlock;
         rendererCTM.blockAccess = world;
         rendererCTM.renderMaxX = 1.0;
@@ -41,12 +47,14 @@ public class CTMRender implements ISimpleBlockRenderingHandler {
     }
 
     @Override
-    public boolean shouldRender3DInInventory(int modelId) {
+    public boolean shouldRender3DInInventory(int modelId)
+    {
         return true;
     }
 
     @Override
-    public int getRenderId() {
+    public int getRenderId()
+    {
         return RenderIDs.blockCTM;
     }
 }
