@@ -4,14 +4,14 @@ import net.minecraft.block.material.Material;
 
 public class BlockCTMGlass extends BlockCTM
 {
-    public BlockCTMGlass(String texture)
+    public BlockCTMGlass(String name, String texture)
     {
-        this(Material.glass, texture);
+        this(name, Material.glass, texture);
     }
 
-    public BlockCTMGlass(Material material, String texture)
+    public BlockCTMGlass(String name, Material material, String texture)
     {
-        super(material, texture);
+        super(name, material, texture);
     }
 
     @Override

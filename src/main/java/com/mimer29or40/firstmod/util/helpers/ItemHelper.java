@@ -36,12 +36,10 @@ public class ItemHelper
                             {
                                 return (itemStack1.getTagCompound().hashCode() - itemStack2.getTagCompound().hashCode());
                             }
-                        }
-                        else if (!(itemStack1.hasTagCompound()) && itemStack2.hasTagCompound())
+                        } else if (!(itemStack1.hasTagCompound()) && itemStack2.hasTagCompound())
                         {
                             return -1;
-                        }
-                        else if (itemStack1.hasTagCompound() && !(itemStack2.hasTagCompound()))
+                        } else if (itemStack1.hasTagCompound() && !(itemStack2.hasTagCompound()))
                         {
                             return 1;
                         }
@@ -130,7 +128,7 @@ public class ItemHelper
 
     public static void setOwner(ItemStack itemStack, EntityPlayer entityPlayer)
     {
-        NBTHelper.setString(itemStack, Names.NBT.OWNER, entityPlayer.getDisplayName());
+        NBTHelper.setString(itemStack, Names.NBT.OWNER, entityPlayer.getDisplayName().getFormattedText());
         NBTHelper.setLong(itemStack, Names.NBT.OWNER_UUID_MOST_SIG, entityPlayer.getUniqueID().getMostSignificantBits());
         NBTHelper.setLong(itemStack, Names.NBT.OWNER_UUID_LEAST_SIG, entityPlayer.getUniqueID().getLeastSignificantBits());
     }

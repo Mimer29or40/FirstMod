@@ -8,28 +8,10 @@ public class Settings
 {
     // General Category
     public static final String CATEGORY_GENERAL = Configuration.CATEGORY_GENERAL;
-
-    public static Setting Debug = new Setting(
-            ConfigurationHandler.SettingType.Boolean,
-            CATEGORY_GENERAL,
-            "Debug",
-            "Enable some debug settings",
-            false);
-
     // Render Category
     public static final String CATEGORY_RENDER = "render";
+    public static Setting Debug = new Setting(ConfigurationHandler.SettingType.Boolean, CATEGORY_GENERAL, "Debug", "Enable some debug settings", false);
+    public static Setting RenderLikeGlass = new Setting(ConfigurationHandler.SettingType.Boolean, CATEGORY_RENDER, "Render frame like glass", "Decide whether or not to render the sides of the frame", true);
 
-    public static Setting RenderLikeGlass = new Setting(
-            ConfigurationHandler.SettingType.Boolean,
-            CATEGORY_RENDER,
-            "Render frame like glass",
-            "Decide whether or not to render the sides of the frame",
-            true);
-
-    public static Setting RenderInside = new Setting(
-            ConfigurationHandler.SettingType.Boolean,
-            CATEGORY_RENDER,
-            "Render from from inside",
-            "Decide whether or not to render the frames inside or outside faces",
-            false);
+    public static Setting RenderInside = new Setting(ConfigurationHandler.SettingType.Boolean, CATEGORY_RENDER, "Render from from inside", "Decide whether or not to render the frames inside or outside faces", false);
 }

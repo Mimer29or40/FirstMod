@@ -14,9 +14,7 @@ public class ChatHelper
     public static void toAllPlayers(Object object)// TODO \/ throws null exception
     {
         for (Object name : MinecraftServer.getServer().getConfigurationManager().playerEntityList)
-        {
             ((EntityPlayer) name).addChatComponentMessage(chatText(object));
-        }
     }
 
     public static void toServer(Object object)

@@ -2,12 +2,13 @@ package com.mimer29or40.firstmod.block;
 
 import com.mimer29or40.firstmod.client.handler.CTMHandler;
 import com.mimer29or40.firstmod.reference.RenderIDs;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.util.IIcon;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.world.IBlockAccess;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockCTM extends BlockFM {
     public CTMHandler ctmHandler;
@@ -15,12 +16,12 @@ public class BlockCTM extends BlockFM {
     protected boolean isAlpha = false;
     protected boolean isAdvancedCTM = false;
 
-    public BlockCTM(String texture) {
-        this(Material.rock, texture);
+    public BlockCTM(String name, String texture) {
+        this(name, Material.rock, texture);
     }
 
-    public BlockCTM(Material material, String texture) {
-        super(material);
+    public BlockCTM(String name, Material material, String texture) {
+        super(name, material);
         textureLocation = texture;
         ctmHandler = new CTMHandler(this, textureLocation);
     }
@@ -41,31 +42,8 @@ public class BlockCTM extends BlockFM {
 
     @Override
     @SideOnly(Side.CLIENT)
-    public int getRenderBlockPass() {
-        return isAlpha ? 1 : 0;
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public IIcon getIcon(int side, int meta) {
-        return ctmHandler.getIcon(side, meta);
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public IIcon getIcon(IBlockAccess world, int x, int y, int z, int side) {
-        return ctmHandler.getIcon(side, world.getBlockMetadata(x, y, z));
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister) {
-        ctmHandler.registerBlockIcons(iconRegister);
-    }
-
-    @Override
-    public boolean shouldSideBeRendered(IBlockAccess blockAccess, int x, int y, int z, int side) {
-        return blockAccess.getBlock(x, y, z) != this && !blockAccess.getBlock(x, y, z).isOpaqueCube();
+    public boolean shouldSideBeRendered(IBlockAccess worldIn, BlockPos pos, EnumFacing side) {
+        return worldIn.getBlockState(pos).getBlock() != this && !worldIn.getBlockState(pos).getBlock().isOpaqueCube();
     }
 
     @Override
@@ -74,12 +52,13 @@ public class BlockCTM extends BlockFM {
     }
 
     @Override
-    public boolean isOpaqueCube() {
-        return true;
+    @SideOnly(Side.CLIENT)
+    public EnumWorldBlockLayer getBlockLayer() {
+        return isAlpha ? EnumWorldBlockLayer.TRANSLUCENT : EnumWorldBlockLayer.SOLID;
     }
 
     @Override
-    public boolean renderAsNormalBlock() {
-        return false;
+    public boolean isOpaqueCube() {
+        return isAlpha ? false : true;
     }
 }

@@ -1,24 +1,22 @@
 package com.mimer29or40.firstmod.util;
 
-import java.math.BigDecimal;
-import java.math.MathContext;
-import java.math.RoundingMode;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.Vec3;
-
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.vector.Vector3f;
 import org.lwjgl.util.vector.Vector4f;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 
 public class Vector3
 {
-    public static Vector3 zero = new Vector3(0,0,0);
+    public static Vector3 zero = new Vector3(0, 0, 0);
     public static Vector3 one = new Vector3(1, 1, 1);
     public static Vector3 center = new Vector3(0.5, 0.5, 0.5);
 
@@ -47,24 +45,24 @@ public class Vector3
         z = vec.zCoord;
     }
 
-    public Vector3 copy() {
-        return new Vector3(this);
-    }
-
     public static Vector3 fromEntity(Entity e) {
         return new Vector3(e.posX, e.posY, e.posZ);
     }
 
     public static Vector3 fromEntityCenter(Entity e) {
-        return new Vector3(e.posX, e.posY - e.yOffset + e.height / 2, e.posZ);
+        return new Vector3(e.posX, e.posY - e.getYOffset() + e.height / 2, e.posZ);
     }
 
     public static Vector3 fromTileEntity(TileEntity e) {
-        return new Vector3(e.xCoord, e.yCoord, e.zCoord);
+        return new Vector3(e.getPos().getX(), e.getPos().getY(), e.getPos().getZ());
     }
 
     public static Vector3 fromTileEntityCenter(TileEntity e) {
-        return new Vector3(e.xCoord + 0.5, e.yCoord + 0.5, e.zCoord + 0.5);
+        return new Vector3(e.getPos().getX() + 0.5, e.getPos().getY() + 0.5, e.getPos().getZ() + 0.5);
+    }
+
+    public Vector3 copy() {
+        return new Vector3(this);
     }
 
     public Vector3 set(double x, double y, double z) {
@@ -84,10 +82,9 @@ public class Vector3
     public double dotProduct(Vector3 vec) {
         double d = vec.x * x + vec.y * y + vec.z * z;
 
-        if(d > 1 && d < 1.00001)
+        if (d > 1 && d < 1.00001) {
             d = 1;
-        else if(d < -1 && d > -1.00001)
-            d = -1;
+        } else if (d < -1 && d > -1.00001) d = -1;
         return d;
     }
 
@@ -172,8 +169,7 @@ public class Vector3
 
     public Vector3 normalize() {
         double d = mag();
-        if(d != 0)
-            multiply(1 / d);
+        if (d != 0) multiply(1 / d);
 
         return this;
     }
@@ -181,12 +177,11 @@ public class Vector3
     @Override
     public String toString() {
         MathContext cont = new MathContext(4, RoundingMode.HALF_UP);
-        return "Vector3(" + new BigDecimal(x, cont) + ", " +new BigDecimal(y, cont) + ", " + new BigDecimal(z, cont) + ")";
+        return "Vector3(" + new BigDecimal(x, cont) + ", " + new BigDecimal(y, cont) + ", " + new BigDecimal(z, cont) + ")";
     }
 
     public Vector3 perpendicular() {
-        if(z == 0)
-            return zCrossProduct();
+        if (z == 0) return zCrossProduct();
         return xCrossProduct();
     }
 
@@ -219,7 +214,7 @@ public class Vector3
     }
 
     public Vec3 toVec3D() {
-        return Vec3.createVectorHelper(x, y, z);
+        return new Vec3(x, y, z);
     }
 
     public double angle(Vector3 vec) {
@@ -240,12 +235,12 @@ public class Vector3
 
     @SideOnly(Side.CLIENT)
     public Vector3f vector3f() {
-        return new Vector3f((float)x, (float)y, (float)z);
+        return new Vector3f((float) x, (float) y, (float) z);
     }
 
     @SideOnly(Side.CLIENT)
     public Vector4f vector4f() {
-        return new Vector4f((float)x, (float)y, (float)z, 1);
+        return new Vector4f((float) x, (float) y, (float) z, 1);
     }
 
     @SideOnly(Side.CLIENT)
@@ -262,17 +257,17 @@ public class Vector3
 
     public double scalarProject(Vector3 b) {
         double l = b.mag();
-        return l == 0 ? 0 : dotProduct(b)/l;
+        return l == 0 ? 0 : dotProduct(b) / l;
     }
 
     public Vector3 project(Vector3 b) {
         double l = b.magSquared();
-        if(l == 0) {
+        if (l == 0) {
             set(0, 0, 0);
             return this;
         }
 
-        double m = dotProduct(b)/l;
+        double m = dotProduct(b) / l;
         set(b).multiply(m);
         return this;
     }
@@ -284,10 +279,9 @@ public class Vector3
 
     @Override
     public boolean equals(Object o) {
-        if(!(o instanceof Vector3))
-            return false;
+        if (!(o instanceof Vector3)) return false;
 
-        Vector3 v = (Vector3)o;
+        Vector3 v = (Vector3) o;
         return x == v.x && y == v.y && z == v.z;
     }
 

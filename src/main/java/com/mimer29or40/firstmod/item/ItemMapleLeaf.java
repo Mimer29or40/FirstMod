@@ -6,7 +6,6 @@ public class ItemMapleLeaf extends ItemFM
 {
     public ItemMapleLeaf()
     {
-        super();
-        this.setUnlocalizedName(Names.Items.MAPLE_LEAF);
+        super(Names.Items.MAPLE_LEAF);
     }
 }

@@ -31,17 +31,21 @@ public class Quat {
         s = d;
     }
 
+    public static Quat aroundAxis(double ax, double ay, double az, double angle) {
+        angle *= 0.5D;
+        double d4 = Math.sin(angle);
+        return new Quat(Math.cos(angle), ax * d4, ay * d4, az * d4);
+    }
+
+    public static Quat aroundAxis(Vector3 axis, double angle) {
+        return aroundAxis(axis.x, axis.y, axis.z, angle);
+    }
+
     public void set(Quat quat) {
         x = quat.x;
         y = quat.y;
         z = quat.z;
         s = quat.s;
-    }
-
-    public static Quat aroundAxis(double ax, double ay, double az, double angle) {
-        angle *= 0.5D;
-        double d4 = Math.sin(angle);
-        return new Quat(Math.cos(angle), ax * d4, ay * d4, az * d4);
     }
 
     public void multiply(Quat quat) {
@@ -102,10 +106,6 @@ public class Quat {
         formatter.format("  < %f %f %f %f >\n", Double.valueOf(s), Double.valueOf(x), Double.valueOf(y), Double.valueOf(z));
         formatter.close();
         return stringbuilder.toString();
-    }
-
-    public static Quat aroundAxis(Vector3 axis, double angle) {
-        return aroundAxis(axis.x, axis.y, axis.z, angle);
     }
 
 }

@@ -6,8 +6,6 @@ public class BlockNics extends BlockFM
 {
     public BlockNics()
     {
-        super();
-        setBlockName(Names.Blocks.NICS);
-        setBlockTextureName(Names.Blocks.NICS);
+        super(Names.Blocks.NICS);
     }
 }

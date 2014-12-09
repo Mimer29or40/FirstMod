@@ -6,8 +6,6 @@ public class BlockFlag extends BlockFM
 {
     public BlockFlag()
     {
-        super();
-        this.setBlockName(Names.Blocks.FLAG);
-        this.setBlockTextureName(Names.Blocks.FLAG);
+        super(Names.Blocks.FLAG);
     }
 }

@@ -60,6 +60,23 @@ public class Setting
         }
     }
 
+    public Object getValue()
+    {
+        switch (this.type)
+        {
+            case Int:
+                return valueI;
+            case Float:
+                return valueF;
+            case Boolean:
+                return valueB;
+            case String:
+                return valueS;
+            default:
+                throw new RuntimeException("Setting type not Recognized!");
+        }
+    }
+
     public void setValue(Object value)
     {
         switch (this.type)
@@ -76,23 +93,6 @@ public class Setting
             case String:
                 this.valueS = (String) value;
                 break;
-            default:
-                throw new RuntimeException("Setting type not Recognized!");
-        }
-    }
-
-    public Object getValue()
-    {
-        switch (this.type)
-        {
-            case Int:
-                return valueI;
-            case Float:
-                return valueF;
-            case Boolean:
-                return valueB;
-            case String:
-                return valueS;
             default:
                 throw new RuntimeException("Setting type not Recognized!");
         }

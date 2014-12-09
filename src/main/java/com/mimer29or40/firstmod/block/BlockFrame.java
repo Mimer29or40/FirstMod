@@ -35,7 +35,7 @@ public class BlockFrame extends BlockFM
     @Override
     public boolean shouldSideBeRendered(IBlockAccess blockAccess, int x, int y, int z, int side)
     {
-        return blockAccess.getBlock(x, y, z)!=this || !(Boolean) Settings.RenderLikeGlass.getValue();
+        return blockAccess.getBlock(x, y, z) != this || !(Boolean) Settings.RenderLikeGlass.getValue();
     }
 
     @Override

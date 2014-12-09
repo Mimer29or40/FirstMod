@@ -3,9 +3,9 @@ package com.mimer29or40.firstmod.handler;
 import com.mimer29or40.firstmod.reference.Reference;
 import com.mimer29or40.firstmod.reference.Settings;
 import com.mimer29or40.firstmod.util.Setting;
-import cpw.mods.fml.client.event.ConfigChangedEvent;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import java.io.File;
 

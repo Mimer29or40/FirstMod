@@ -5,7 +5,7 @@ import com.mimer29or40.firstmod.item.ItemMapleLeaf;
 import com.mimer29or40.firstmod.item.ItemTorch;
 import com.mimer29or40.firstmod.reference.Names;
 import com.mimer29or40.firstmod.reference.Reference;
-import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @GameRegistry.ObjectHolder(Reference.MOD_ID)
 public class ModItems

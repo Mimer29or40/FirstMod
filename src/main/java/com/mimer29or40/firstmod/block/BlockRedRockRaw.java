@@ -5,12 +5,6 @@ import net.minecraft.block.material.Material;
 
 public class BlockRedRockRaw extends BlockFM {
     public BlockRedRockRaw() {
-        this(Material.rock);
-    }
-
-    public BlockRedRockRaw(Material material) {
-        super(material);
-        setBlockName(Names.Blocks.REDROCK_RAW);
-        setBlockTextureName(Names.Blocks.REDROCK_RAW);
+        super(Names.Blocks.REDROCK_RAW, Material.rock);
     }
 }

@@ -1,0 +1,12 @@
+{
+  "parent": "firstmod:block/cube",
+  "textures": {
+    "particle": "firstmod:blocks/frame_top",
+    "down": "firstmod:blocks/frame_bottom",
+    "up": "firstmod:blocks/frame_top",
+    "north": "firstmod:blocks/frame_north",
+    "east": "firstmod:blocks/frame_east",
+    "south": "firstmod:blocks/frame_south",
+    "west": "firstmod:blocks/frame_west"
+  }
+}

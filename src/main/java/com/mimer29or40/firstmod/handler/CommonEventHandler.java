@@ -1,13 +1,12 @@
 package com.mimer29or40.firstmod.handler;
 
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.PlayerEvent;
-import cpw.mods.fml.common.gameevent.TickEvent;
 import net.minecraft.util.ChatComponentText;
 import net.minecraftforge.event.entity.EntityEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.*;
 import net.minecraftforge.event.entity.player.*;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 public class CommonEventHandler
 {
@@ -18,13 +17,13 @@ public class CommonEventHandler
     }
 
     @SubscribeEvent
-    public void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent event)
+    public void onPlayerLogin(net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent event)
     {
         event.player.addChatComponentMessage(new ChatComponentText(event.player.getDisplayName() + " just entered"));
     }
 
     @SubscribeEvent
-    public void onPlayerLogout(PlayerEvent.PlayerLoggedOutEvent event)
+    public void onPlayerLogout(net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedOutEvent event)
     {
 
     }

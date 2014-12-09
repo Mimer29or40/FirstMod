@@ -1,0 +1,10 @@
+{
+  "parent": "firstmod:block/cube",
+  "textures": {
+    "particle": "#side",
+    "north": "#side",
+    "east": "#side",
+    "south": "#side",
+    "west": "#side"
+  }
+}

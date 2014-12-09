@@ -1,14 +1,14 @@
 package com.mimer29or40.firstmod.client.handler;
 
 import com.mimer29or40.firstmod.util.IInfo;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
 
 @SideOnly(Side.CLIENT)
@@ -22,7 +22,7 @@ public class HUDHandler
         //        int x = res.getScaledWidth() / 2 - mc.fontRenderer.getStringWidth(name) / 2;
         //        int y = res.getScaledHeight() / 2 + 10;
 
-        mc.fontRenderer.drawStringWithShadow(text, x, y, 0x00FFFFFF);
+        mc.fontRendererObj.drawString(text, x, y, 0x00FFFFFF);
         GL11.glDisable(GL11.GL_BLEND);
     }
 
@@ -35,10 +35,10 @@ public class HUDHandler
             MovingObjectPosition pos = mc.objectMouseOver;
             if (pos != null)
             {
-                Block block = mc.theWorld.getBlock(pos.blockX, pos.blockY, pos.blockZ);
+                Block block = mc.theWorld.getBlockState(pos.func_178782_a()).getBlock();
                 if (block instanceof IInfo)
                 {
-                    ((IInfo) block).renderInfoOnScreen(mc, event.resolution, mc.theWorld, pos.blockX, pos.blockY, pos.blockZ);
+                    ((IInfo) block).renderInfoOnScreen(mc, event.resolution, mc.theWorld, pos.func_178782_a());
                 }
             }
 
