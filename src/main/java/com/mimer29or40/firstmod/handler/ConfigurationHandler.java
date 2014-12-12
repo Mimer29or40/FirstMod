@@ -29,24 +29,24 @@ public class ConfigurationHandler
         if(config.hasChanged()) config.save();
     }
 
-    private static int getInt(Setting setting)
+    private static int getInt(Setting.I setting)
     {
-        return config.getInt(setting.name, setting.category, (Integer) setting.getDefault(), (Integer) setting.getMin(), (Integer) setting.getMax(), setting.label);
+        return config.getInt(setting.getName(), setting.getCategory(), setting.getDefult(), setting.getMin(), setting.getMax(), setting.getLabel());
     }
 
-    private static float getFloat(Setting setting)
+    private static float getFloat(Setting.F setting)
     {
-        return config.getFloat(setting.name, setting.category, (Float) setting.getDefault(), (Float) setting.getMin(), (Float) setting.getMax(), setting.label);
+        return config.getFloat(setting.getName(), setting.getCategory(), setting.getDefult(), setting.getMin(), setting.getMax(), setting.getLabel());
     }
 
-    private static boolean getBoolean(Setting setting)
+    private static boolean getBoolean(Setting.B setting)
     {
-        return config.getBoolean(setting.name, setting.category, (Boolean) setting.getDefault(), setting.label);
+        return config.getBoolean(setting.getName(), setting.getCategory(), setting.getDefult(), setting.getLabel());
     }
 
-    private static String getString(Setting setting)
+    private static String getString(Setting.S setting)
     {
-        return config.getString(setting.name, setting.category, (String) setting.getDefault(), setting.label);
+        return config.getString(setting.getName(), setting.getCategory(), setting.getDefult(), setting.getLabel());
     }
 
     @SubscribeEvent
