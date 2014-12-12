@@ -15,7 +15,7 @@ public class ConfigurationHandler
 
     public ConfigurationHandler(File configFile)
     {
-        if (config == null) // Create the configuration object from the given configuration file
+        if(config == null) // Create the configuration object from the given configuration file
         {
             config = new Configuration(configFile);
             loadConfiguration();
@@ -25,10 +25,8 @@ public class ConfigurationHandler
     private static void loadConfiguration()
     {
         Settings.Debug.setValue(getBoolean(Settings.Debug));
-        Settings.RenderLikeGlass.setValue(getBoolean(Settings.RenderLikeGlass));
-        Settings.RenderInside.setValue(getBoolean(Settings.RenderInside));
 
-        if (config.hasChanged()) config.save();
+        if(config.hasChanged()) config.save();
     }
 
     private static int getInt(Setting setting)
@@ -54,7 +52,7 @@ public class ConfigurationHandler
     @SubscribeEvent
     public void onConfigurationChangeEvent(ConfigChangedEvent.OnConfigChangedEvent event)
     {
-        if (event.modID.equals(Reference.MOD_ID))
+        if(event.modID.equals(Reference.MOD_ID))
         {
             loadConfiguration();
         }

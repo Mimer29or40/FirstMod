@@ -29,16 +29,16 @@ public class HUDHandler
     @SubscribeEvent
     public void onDrawScreen(RenderGameOverlayEvent.Post event)
     {
-        if (event.type == RenderGameOverlayEvent.ElementType.ALL)
+        if(event.type == RenderGameOverlayEvent.ElementType.ALL)
         {
             Minecraft mc = Minecraft.getMinecraft();
             MovingObjectPosition pos = mc.objectMouseOver;
-            if (pos != null)
+            if(pos != null)
             {
-                Block block = mc.theWorld.getBlockState(pos.func_178782_a()).getBlock();
-                if (block instanceof IInfo)
+                Block block = mc.theWorld.getBlockState(pos.getBlockPos()).getBlock();
+                if(block instanceof IInfo)
                 {
-                    ((IInfo) block).renderInfoOnScreen(mc, event.resolution, mc.theWorld, pos.func_178782_a());
+                    ((IInfo) block).renderInfoOnScreen(mc, event.resolution, mc.theWorld, pos.getBlockPos());
                 }
             }
 

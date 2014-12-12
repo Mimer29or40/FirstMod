@@ -9,24 +9,24 @@ public class Textures
 
     public static final class Block
     {
-        public static final String BLOCK_TEXTURES = "textures/blocks/";
-        public static final ResourceLocation CRYSTAL = ResourceLocationHelper.getResourceLocation(BLOCK_TEXTURES + "crystal.png");
-        public static final ResourceLocation ARROW = ResourceLocationHelper.getResourceLocation(BLOCK_TEXTURES + "arrow.png");
-        public static final ResourceLocation ARROW_TOP = ResourceLocationHelper.getResourceLocation(BLOCK_TEXTURES + "arrow_top.png");
-        public static final ResourceLocation ARROW_BOTTOM = ResourceLocationHelper.getResourceLocation(BLOCK_TEXTURES + "arrow_bottom.png");
+        public static final String           BLOCK_TEXTURES = "textures/blocks/";
+        public static final ResourceLocation CRYSTAL        = ResourceLocationHelper.getResourceLocation(BLOCK_TEXTURES + "crystal.png");
+        public static final ResourceLocation ARROW          = ResourceLocationHelper.getResourceLocation(BLOCK_TEXTURES + "arrow.png");
+        public static final ResourceLocation ARROW_TOP      = ResourceLocationHelper.getResourceLocation(BLOCK_TEXTURES + "arrow_top.png");
+        public static final ResourceLocation ARROW_BOTTOM   = ResourceLocationHelper.getResourceLocation(BLOCK_TEXTURES + "arrow_bottom.png");
 
         public static final class CTM
         {
-            public static final String TEST_TEXTURES = "test/";
-            public static final ResourceLocation TEST = ResourceLocationHelper.getResourceLocation(TEST_TEXTURES + "test.png");
+            public static final String           TEST_TEXTURES = "test/";
+            public static final ResourceLocation TEST          = ResourceLocationHelper.getResourceLocation(TEST_TEXTURES + "test.png");
         }
     }
 
     public static final class Item
     {
-        public static final String ITEM_TEXTURES = "textures/items/";
-        public static final ResourceLocation TORCH = ResourceLocationHelper.getResourceLocation(ITEM_TEXTURES + "torch.png");
-        public static final ResourceLocation MAPLE_LEAF = ResourceLocationHelper.getResourceLocation(ITEM_TEXTURES + "mapleLeaf.png");
+        public static final String           ITEM_TEXTURES = "textures/items/";
+        public static final ResourceLocation TORCH         = ResourceLocationHelper.getResourceLocation(ITEM_TEXTURES + "torch.png");
+        public static final ResourceLocation MAPLE_LEAF    = ResourceLocationHelper.getResourceLocation(ITEM_TEXTURES + "mapleLeaf.png");
     }
 
     public static final class Gui

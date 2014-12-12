@@ -1,6 +1,5 @@
 package com.mimer29or40.firstmod.handler;
 
-import net.minecraft.util.ChatComponentText;
 import net.minecraftforge.event.entity.EntityEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.*;
@@ -19,7 +18,7 @@ public class CommonEventHandler
     @SubscribeEvent
     public void onPlayerLogin(net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent event)
     {
-        event.player.addChatComponentMessage(new ChatComponentText(event.player.getDisplayName() + " just entered"));
+        //        event.player.addChatComponentMessage(new ChatComponentText(event.player.getDisplayName() + " just entered"));
     }
 
     @SubscribeEvent

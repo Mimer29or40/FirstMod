@@ -1,7 +1,7 @@
 package com.mimer29or40.firstmod;
 
-import com.mimer29or40.firstmod.proxy.IProxy;
 import com.mimer29or40.firstmod.reference.Reference;
+import com.mimer29or40.firstmod.reference.Settings;
 import com.mimer29or40.firstmod.util.helpers.LogHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -36,9 +36,8 @@ public class FirstMod
     {
         proxy.postInit(event);
 
-        for (String oreName : OreDictionary.getOreNames())
-        {
-            LogHelper.debug(oreName);
-        }
+        if(Boolean.valueOf(String.valueOf(Settings.Debug.getValue())))
+            for(String oreName : OreDictionary.getOreNames())
+                LogHelper.debug(oreName);
     }
 }

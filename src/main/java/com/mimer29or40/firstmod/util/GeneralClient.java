@@ -8,14 +8,14 @@ import java.util.Random;
 
 public class GeneralClient
 {
-    public static Random random = new Random();
-    static HashMap<String, ResourceLocation> resource = new HashMap<String, ResourceLocation>();
+    public static Random                              random   = new Random();
+    static        HashMap< String, ResourceLocation > resource = new HashMap< String, ResourceLocation >();
 
     public static void bind(String textureName)
     {
         ResourceLocation res = resource.get(textureName);
 
-        if (res == null)
+        if(res == null)
         {
             res = new ResourceLocation(textureName);
             resource.put(textureName, res);

@@ -12,11 +12,11 @@ public class KeyInputEventHandler
 {
     private static Key getPressedKeybinding()
     {
-        if (Keybindings.charge.isPressed())
+        if(Keybindings.charge.isPressed())
         {
             return Key.CHARGE;
         }
-        else if (Keybindings.release.isPressed())
+        else if(Keybindings.release.isPressed())
         {
             return Key.RELEASE;
         }

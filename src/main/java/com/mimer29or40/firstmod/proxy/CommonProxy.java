@@ -1,6 +1,7 @@
 package com.mimer29or40.firstmod.proxy;
 
 import com.mimer29or40.firstmod.FirstMod;
+import com.mimer29or40.firstmod.block.FMBlock;
 import com.mimer29or40.firstmod.handler.CommonEventHandler;
 import com.mimer29or40.firstmod.handler.ConfigurationHandler;
 import com.mimer29or40.firstmod.init.ModBlocks;
@@ -11,7 +12,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-public class CommonProxy implements IProxy
+public class CommonProxy
 {
     public void preInit(FMLPreInitializationEvent event)
     {
@@ -30,6 +31,16 @@ public class CommonProxy implements IProxy
     }
 
     public void postInit(FMLPostInitializationEvent event)
+    {
+        // NOOP
+    }
+
+    protected void registerRenderers()
+    {
+        // NOOP
+    }
+
+    protected void registerBlockForMeshing(FMBlock block, int metadata, String name)
     {
         // NOOP
     }

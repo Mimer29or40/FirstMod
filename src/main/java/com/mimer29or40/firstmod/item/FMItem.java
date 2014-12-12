@@ -5,9 +5,10 @@ import com.mimer29or40.firstmod.reference.Textures;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public class ItemFM extends Item
+public class FMItem
+        extends Item
 {
-    public ItemFM(String name)
+    public FMItem(String name)
     {
         super();
         this.setCreativeTab(CreativeTab.FM_TAB);

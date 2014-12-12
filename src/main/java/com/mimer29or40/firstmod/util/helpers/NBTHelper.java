@@ -15,7 +15,7 @@ public class NBTHelper // TODO optimize this
 
     public static void removeTag(ItemStack itemStack, String keyName)
     {
-        if (itemStack.getTagCompound() != null)
+        if(itemStack.getTagCompound() != null)
         {
             itemStack.getTagCompound().removeTag(keyName);
         }
@@ -31,7 +31,7 @@ public class NBTHelper // TODO optimize this
         initNBTTagCompound(itemStack);
 
         // Set a UUID on the Alchemical Bag, if one doesn't exist already
-        if (!hasTag(itemStack, Names.NBT.UUID_MOST_SIG) && !hasTag(itemStack, Names.NBT.UUID_LEAST_SIG))
+        if(! hasTag(itemStack, Names.NBT.UUID_MOST_SIG) && ! hasTag(itemStack, Names.NBT.UUID_LEAST_SIG))
         {
             UUID itemUUID = UUID.randomUUID();
             setLong(itemStack, Names.NBT.UUID_MOST_SIG, itemUUID.getMostSignificantBits());
@@ -46,7 +46,7 @@ public class NBTHelper // TODO optimize this
      */
     private static void initNBTTagCompound(ItemStack itemStack)
     {
-        if (itemStack.getTagCompound() == null)
+        if(itemStack.getTagCompound() == null)
         {
             itemStack.setTagCompound(new NBTTagCompound());
         }
@@ -64,7 +64,7 @@ public class NBTHelper // TODO optimize this
     {
         initNBTTagCompound(itemStack);
 
-        if (!itemStack.getTagCompound().hasKey(keyName))
+        if(! itemStack.getTagCompound().hasKey(keyName))
         {
             setString(itemStack, keyName, "");
         }
@@ -84,7 +84,7 @@ public class NBTHelper // TODO optimize this
     {
         initNBTTagCompound(itemStack);
 
-        if (!itemStack.getTagCompound().hasKey(keyName))
+        if(! itemStack.getTagCompound().hasKey(keyName))
         {
             setBoolean(itemStack, keyName, false);
         }
@@ -104,7 +104,7 @@ public class NBTHelper // TODO optimize this
     {
         initNBTTagCompound(itemStack);
 
-        if (!itemStack.getTagCompound().hasKey(keyName))
+        if(! itemStack.getTagCompound().hasKey(keyName))
         {
             setByte(itemStack, keyName, (byte) 0);
         }
@@ -124,7 +124,7 @@ public class NBTHelper // TODO optimize this
     {
         initNBTTagCompound(itemStack);
 
-        if (!itemStack.getTagCompound().hasKey(keyName))
+        if(! itemStack.getTagCompound().hasKey(keyName))
         {
             setShort(itemStack, keyName, (short) 0);
         }
@@ -144,7 +144,7 @@ public class NBTHelper // TODO optimize this
     {
         initNBTTagCompound(itemStack);
 
-        if (!itemStack.getTagCompound().hasKey(keyName))
+        if(! itemStack.getTagCompound().hasKey(keyName))
         {
             setInteger(itemStack, keyName, 0);
         }
@@ -164,7 +164,7 @@ public class NBTHelper // TODO optimize this
     {
         initNBTTagCompound(itemStack);
 
-        if (!itemStack.getTagCompound().hasKey(keyName))
+        if(! itemStack.getTagCompound().hasKey(keyName))
         {
             setLong(itemStack, keyName, 0);
         }
@@ -177,7 +177,7 @@ public class NBTHelper // TODO optimize this
     {
         initNBTTagCompound(itemStack);
 
-        if (!itemStack.getTagCompound().hasKey(keyName))
+        if(! itemStack.getTagCompound().hasKey(keyName))
         {
             setFloat(itemStack, keyName, 0);
         }
@@ -197,7 +197,7 @@ public class NBTHelper // TODO optimize this
     {
         initNBTTagCompound(itemStack);
 
-        if (!itemStack.getTagCompound().hasKey(keyName))
+        if(! itemStack.getTagCompound().hasKey(keyName))
         {
             setDouble(itemStack, keyName, 0);
         }
