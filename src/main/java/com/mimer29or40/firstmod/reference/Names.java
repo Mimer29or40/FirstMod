@@ -17,9 +17,7 @@ public class Names
         public static final String NICS           = "nics";
         public static final String CTM_TEST       = "test";
         public static final String WINDOW         = "window";
-        public static final String REDROCK_RAW    = "redrock_raw";
         public static final String REDROCK        = "redrock";
-        public static final String REDROCK_SMOOTH = "redrock_smooth";
     }
 
     public static final class Tools

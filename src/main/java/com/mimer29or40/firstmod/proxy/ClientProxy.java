@@ -6,6 +6,7 @@ import com.mimer29or40.firstmod.client.handler.HUDHandler;
 import com.mimer29or40.firstmod.client.handler.KeyInputEventHandler;
 import com.mimer29or40.firstmod.client.helpers.ModelHelper;
 import com.mimer29or40.firstmod.client.settings.Keybindings;
+import com.mimer29or40.firstmod.item.FMItem;
 import com.mimer29or40.firstmod.reference.Reference;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
@@ -22,9 +23,11 @@ import java.util.ArrayList;
 public class ClientProxy
         extends CommonProxy
 {
-    private static ArrayList< ModelEntry > blocksToRegister = new ArrayList();
+    private static ArrayList< ModelBlockEntry > blocksToRegister = new ArrayList();
+    private static ArrayList< ModelItemEntry >  itemsToRegister  = new ArrayList();
 
     @Override
+
     public void preInit(FMLPreInitializationEvent event)
     {
         super.preInit(event);
@@ -59,29 +62,53 @@ public class ClientProxy
     }
 
     @Override
-    protected void registerRenderers()
+    public void registerRenderers()
     {
-        for(ModelEntry modelEntry : blocksToRegister)
+        for(ModelBlockEntry modelBlockEntry : blocksToRegister)
         {
-            ModelHelper.registerBlock(modelEntry.block, modelEntry.metadata, Reference.MOD_ID + ":" + modelEntry.name);
+            ModelHelper.registerBlock(modelBlockEntry.block, modelBlockEntry.metadata, Reference.MOD_ID + ":" + modelBlockEntry.name);
+        }
+        for(ModelItemEntry modelItemEntry : itemsToRegister)
+        {
+            ModelHelper.registerItem(modelItemEntry.item, modelItemEntry.metadata, Reference.MOD_ID + ":" + modelItemEntry.name);
         }
     }
 
     @Override
-    protected void registerBlockForMeshing(FMBlock block, int metadata, String name)
+    public void registerBlockForMeshing(FMBlock block, int metadata, String name)
     {
-        blocksToRegister.add(new ModelEntry(block, metadata, name));
+        blocksToRegister.add(new ModelBlockEntry(block, metadata, name));
     }
 
-    private static class ModelEntry
+    @Override
+    public void registerItemForMeshing(FMItem item, int metadata, String name)
+    {
+        itemsToRegister.add(new ModelItemEntry(item, metadata, name));
+    }
+
+    private static class ModelBlockEntry
     {
         public FMBlock block;
         public int     metadata;
         public String  name;
 
-        public ModelEntry(FMBlock block, int metadata, String name)
+        public ModelBlockEntry(FMBlock block, int metadata, String name)
         {
             this.block = block;
+            this.metadata = metadata;
+            this.name = name;
+        }
+    }
+
+    private static class ModelItemEntry
+    {
+        public FMItem item;
+        public int    metadata;
+        public String name;
+
+        public ModelItemEntry(FMItem item, int metadata, String name)
+        {
+            this.item = item;
             this.metadata = metadata;
             this.name = name;
         }

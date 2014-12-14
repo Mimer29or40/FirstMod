@@ -87,18 +87,13 @@ public class Quat
     public void normalize()
     {
         double d = mag();
-        if(d == 0.0D)
-        {
-            return;
-        }
-        else
+        if(d != 0.0D)
         {
             d = 1.0D / d;
             x *= d;
             y *= d;
             z *= d;
             s *= d;
-            return;
         }
     }
 
@@ -118,8 +113,8 @@ public class Quat
     {
         StringBuilder stringbuilder = new StringBuilder();
         Formatter formatter = new Formatter(stringbuilder, Locale.US);
-        formatter.format("Quaternion:\n", new Object[0]);
-        formatter.format("  < %f %f %f %f >\n", Double.valueOf(s), Double.valueOf(x), Double.valueOf(y), Double.valueOf(z));
+        formatter.format("Quaternion:\n");
+        formatter.format("  < %f %f %f %f >\n", s, x, y, z);
         formatter.close();
         return stringbuilder.toString();
     }

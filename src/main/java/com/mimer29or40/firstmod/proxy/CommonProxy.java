@@ -7,12 +7,14 @@ import com.mimer29or40.firstmod.handler.ConfigurationHandler;
 import com.mimer29or40.firstmod.init.ModBlocks;
 import com.mimer29or40.firstmod.init.ModItems;
 import com.mimer29or40.firstmod.init.Recipes;
+import com.mimer29or40.firstmod.item.FMItem;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 public class CommonProxy
+    implements IProxy
 {
     public void preInit(FMLPreInitializationEvent event)
     {
@@ -35,12 +37,17 @@ public class CommonProxy
         // NOOP
     }
 
-    protected void registerRenderers()
+    public void registerRenderers()
     {
         // NOOP
     }
 
-    protected void registerBlockForMeshing(FMBlock block, int metadata, String name)
+    public void registerBlockForMeshing(FMBlock block, int metadata, String name)
+    {
+        // NOOP
+    }
+
+    public void registerItemForMeshing(FMItem item, int metadata, String name)
     {
         // NOOP
     }

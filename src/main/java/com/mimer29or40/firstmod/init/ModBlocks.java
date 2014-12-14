@@ -22,10 +22,10 @@ public class ModBlocks
     public static Block redrock_raw;
     public static Block redrock;
 
-    public static Block ctm_test       = new BlockCTMGlass(Names.Blocks.CTM_TEST, "ctm/test").setAdvCTM(true);
-    public static Block window         = new BlockCTMGlass(Names.Blocks.WINDOW, "ctm/Window").setAlpha(true).setAdvCTM(true);
-    public static Block clear_glass    = new BlockCTMGlass("clear_glass", "ctm/clear").setAdvCTM(true);
-    public static Block redrock_smooth = new BlockCTM(Names.Blocks.REDROCK_SMOOTH, "ctm/redrock_smooth").setAdvCTM(true);
+//    public static Block ctm_test       = new BlockCTMGlass(Names.Blocks.CTM_TEST, "ctm/test").setAdvCTM(true);
+//    public static Block window         = new BlockCTMGlass(Names.Blocks.WINDOW, "ctm/Window").setAlpha(true).setAdvCTM(true);
+//    public static Block clear_glass    = new BlockCTMGlass("clear_glass", "ctm/clear").setAdvCTM(true);
+//    public static Block redrock_smooth = new BlockCTM(Names.Blocks.REDROCK_SMOOTH, "ctm/redrock_smooth").setAdvCTM(true);
 
     public static void init()
     {
@@ -34,8 +34,7 @@ public class ModBlocks
         arrow = registerBlock(new BlockArrow(), Names.Blocks.ARROW);
         crystal = registerBlock(new BlockCrystal(), Names.Blocks.CRYSTAL);
         nics = registerBlock(new BlockNics(), Names.Blocks.NICS);
-        redrock_raw = registerBlock(new BlockRedRockRaw(), Names.Blocks.REDROCK_RAW);
-        redrock = registerBlock(new BlockRedRockRaw(), Names.Blocks.REDROCK);
+        redrock = registerBlock(new BlockRedRock(), Names.Blocks.REDROCK);
 
         //        GameRegistry.registerBlock(ctm_test, Names.Blocks.CTM_TEST);
         //        GameRegistry.registerBlock(window, Names.Blocks.WINDOW);

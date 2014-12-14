@@ -12,7 +12,7 @@ public class CommonEventHandler
     @SubscribeEvent
     public void onRenderTick(TickEvent.RenderTickEvent event)
     {
-
+        // NOOP
     }
 
     @SubscribeEvent
@@ -24,95 +24,96 @@ public class CommonEventHandler
     @SubscribeEvent
     public void onPlayerLogout(net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedOutEvent event)
     {
-
+        // NOOP
     }
 
     @SubscribeEvent
     public void onEntityConstruct(EntityEvent.EntityConstructing event)
     {
-
+        // NOOP
     }
 
     @SubscribeEvent
     public void EntityUpdate(LivingEvent event)
     {
-
+        // NOOP
     }
 
     @SubscribeEvent
     public void LivingJumpEvent(LivingEvent event)
     {
-
+        // NOOP
     }
 
     @SubscribeEvent
     public void onPlayerJoinWorld(EntityJoinWorldEvent event)
     {
+        // NOOP
     }
 
     @SubscribeEvent
     public void onLivingAttack(LivingAttackEvent event)
     {
-
+        // NOOP
     }
 
     @SubscribeEvent
     public void onLivingDeath(LivingDeathEvent event)
     {
-
+        // NOOP
     }
 
     @SubscribeEvent
     public void onLivingHurt(LivingHurtEvent event)
     {
-
+        // NOOP
     }
 
     @SubscribeEvent
     public void onLivingFall(LivingFallEvent event)
     {
-
+        // NOOP
     }
 
     @SubscribeEvent
     public void onArrowLoose(ArrowLooseEvent event)
     {
-
+        // NOOP
     }
 
     @SubscribeEvent
     public void onAttackEntity(AttackEntityEvent event)
     {
-
+        // NOOP
     }
 
     @SubscribeEvent
     public void onBoneMeal(BonemealEvent event)
     {
-
+        // NOOP
     }
 
     @SubscribeEvent
     public void onFillBucket(FillBucketEvent event)
     {
-
+        // NOOP
     }
 
     @SubscribeEvent
     public void onPlayerInteract(PlayerInteractEvent event)
     {
-
+        // NOOP
     }
 
     @SubscribeEvent
     public void onPlayerSleep(PlayerSleepInBedEvent event)
     {
-
+        // NOOP
     }
 
     @SubscribeEvent
     public void onUseHoe(UseHoeEvent event)
     {
-
+        // NOOP
     }
 }

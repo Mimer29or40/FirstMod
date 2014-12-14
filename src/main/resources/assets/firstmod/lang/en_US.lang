@@ -12,9 +12,14 @@ tile.firstmod:nics.name=Nics Block
 tile.firstmod:test.name=CTM Test
 tile.firstmod:window.name=Window
 tile.firstmod:clear_glass.name=Clear Glass
-tile.firstmod:redrock.name=Red Cobblestone
-tile.firstmod:redrock_raw.name=Red Rock
-tile.firstmod:redrock_smooth.name=Smooth Red Rock
+tile.firstmod:redrock.redrock_cobble.name=Red Cobblestone
+tile.firstmod:redrock.redrock_cobble_mossy.name=Mossy Red Cobblestone
+tile.firstmod:redrock.redrock_bricks.name=Mossy Red Rock Bricks
+tile.firstmod:redrock.redrock_bricks_mossy.name=Red Rock Bricks
+tile.firstmod:redrock.redrock_slab.name=Red Rock Slab
+tile.firstmod:redrock.redrock_slab_side.name=Double Red Rock Slab
+tile.firstmod:redrock.redrock_carved.name=Carved Red Rock
+tile.firstmod:redrock.redrock_smooth.name=Red Rock
 
 # Creative Tab
 itemGroup.firstmod=First Mod

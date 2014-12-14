@@ -1,5 +1,5 @@
 {
-  "parent": "firstmod:block/redrock_raw",
+  "parent": "firstmod:block/redrock_carved",
   "display": {
     "thirdperson": {
       "rotation": [

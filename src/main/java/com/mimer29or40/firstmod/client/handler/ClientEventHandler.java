@@ -11,7 +11,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class ClientEventHandler
 {
-    public static int ticksInGame = 0;
+    private static int ticksInGame = 0;
 
     @SubscribeEvent
     public void clientTickEnd(TickEvent.ClientTickEvent event)
@@ -26,9 +26,14 @@ public class ClientEventHandler
         }
     }
 
+    public int getTicksInGame()
+    {
+        return ticksInGame;
+    }
+
     @SubscribeEvent
     public void onRenderGameOverlay(RenderGameOverlayEvent event)
     {
-
+        // NOOP
     }
 }

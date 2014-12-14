@@ -1,5 +1,12 @@
 {
   "variants": {
-    "normal": {"model": "firstmod:redrock"}
+    "variant=cobble": {"model": "firstmod:redrock_cobble"},
+    "variant=cobble_mossy": {"model": "firstmod:redrock_cobble_mossy"},
+    "variant=bricks": {"model": "firstmod:redrock_bricks"},
+    "variant=bricks_mossy": {"model": "firstmod:redrock_bricks_mossy"},
+    "variant=slab": {"model": "firstmod:redrock_slab"},
+    "variant=slab_side": {"model": "firstmod:redrock_slab_side"},
+    "variant=carved": {"model": "firstmod:redrock_carved"},
+    "variant=smooth": {"model": "firstmod:redrock_smooth"}
   }
 }

@@ -14,8 +14,7 @@ public class BlockCTM
         extends FMBlock
 {
     public CTMHandler ctmHandler;
-    public String     textureLocation;
-    protected boolean isAlpha       = false;
+    private String textureLocation;
     protected boolean isAdvancedCTM = false;
 
     public BlockCTM(String name, String texture)
@@ -30,20 +29,14 @@ public class BlockCTM
         ctmHandler = new CTMHandler(this, textureLocation);
     }
 
-    public BlockCTM setAlpha(boolean a)
-    {
-        this.isAlpha = a;
-        return this;
-    }
-
     public boolean isAdvCTM()
     {
         return this.isAdvancedCTM;
     }
 
-    public BlockCTM setAdvCTM(boolean ctm)
+    public BlockCTM setAdvCTM()
     {
-        this.isAdvancedCTM = ctm;
+        this.isAdvancedCTM = true;
         return this;
     }
 
@@ -64,12 +57,11 @@ public class BlockCTM
     @SideOnly(Side.CLIENT)
     public EnumWorldBlockLayer getBlockLayer()
     {
-        return isAlpha ? EnumWorldBlockLayer.TRANSLUCENT : EnumWorldBlockLayer.SOLID;
+        return EnumWorldBlockLayer.SOLID;
     }
 
-    @Override
-    public boolean isOpaqueCube()
+    public String getTextureLocation()
     {
-        return isAlpha ? false : true;
+        return textureLocation;
     }
 }

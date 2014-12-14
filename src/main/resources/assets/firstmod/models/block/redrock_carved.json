@@ -1,6 +1,6 @@
 {
   "parent": "firstmod:block/cube_all",
   "textures": {
-    "all": "firstmod:blocks/redrock"
+    "all": "firstmod:blocks/redrock_carved"
   }
 }
