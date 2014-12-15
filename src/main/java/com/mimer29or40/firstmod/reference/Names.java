@@ -6,18 +6,19 @@ public class Names
     {
         public static final String MAPLE_LEAF = "mapleLeaf";
         public static final String TORCH      = "torch";
+        public static final String DEBUG      = "debug";
     }
 
     public static final class Blocks
     {
-        public static final String FLAG           = "flag";
-        public static final String FRAME          = "frame";
-        public static final String ARROW          = "arrow";
-        public static final String CRYSTAL        = "crystal";
-        public static final String NICS           = "nics";
-        public static final String CTM_TEST       = "test";
-        public static final String WINDOW         = "window";
-        public static final String REDROCK        = "redrock";
+        public static final String FLAG     = "flag";
+        public static final String FRAME    = "frame";
+        public static final String ARROW    = "arrow";
+        public static final String CRYSTAL  = "crystal";
+        public static final String NICS     = "nics";
+        public static final String CTM_TEST = "test";
+        public static final String WINDOW   = "window";
+        public static final String REDROCK  = "redrock";
     }
 
     public static final class Tools

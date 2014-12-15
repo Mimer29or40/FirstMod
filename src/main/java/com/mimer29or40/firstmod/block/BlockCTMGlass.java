@@ -8,7 +8,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class BlockCTMGlass
         extends BlockCTM
 {
-    public BlockCTMGlass(String name, Material material, String texture)
+    public BlockCTMGlass(String name, String texture)
     {
         super(name, Material.glass, texture);
     }
@@ -20,7 +20,7 @@ public class BlockCTMGlass
     }
 
     @Override
-    @SideOnly( Side.CLIENT)
+    @SideOnly(Side.CLIENT)
     public EnumWorldBlockLayer getBlockLayer()
     {
         return EnumWorldBlockLayer.TRANSLUCENT;

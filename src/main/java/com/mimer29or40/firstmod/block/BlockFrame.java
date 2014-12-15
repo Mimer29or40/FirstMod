@@ -20,7 +20,7 @@ public class BlockFrame
         return false;
     }
 
-    @SideOnly( Side.CLIENT)
+    @SideOnly(Side.CLIENT)
     public EnumWorldBlockLayer getBlockLayer()
     {
         return EnumWorldBlockLayer.TRANSLUCENT;

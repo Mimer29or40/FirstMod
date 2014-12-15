@@ -37,7 +37,12 @@ public class FirstMod
     {
         proxy.postInit(event);
 
-        if(Boolean.valueOf(String.valueOf(Settings.Debug.getValue()))) for(String oreName : OreDictionary.getOreNames())
-            LogHelper.debug(oreName);
+        if(Boolean.valueOf(String.valueOf(Settings.Debug.getValue())))
+        {
+            for(String oreName : OreDictionary.getOreNames())
+            {
+                LogHelper.debug(oreName);
+            }
+        }
     }
 }

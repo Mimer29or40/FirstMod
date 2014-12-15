@@ -10,7 +10,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 
 public class BlockFacing
-    extends FMBlock
+        extends FMBlock
 {
     protected static final PropertyEnum FACING_PROP = PropertyEnum.create("axis", EnumFacing.class);
 
@@ -46,11 +46,12 @@ public class BlockFacing
     @Override
     public String getStateName(IBlockState state)
     {
-        return ((EnumFacing) state.getValue(FACING_PROP)).getName();
+        return super.getStateName(state) + "_" + ((EnumFacing) state.getValue(FACING_PROP)).getName();
     }
 
     @Override
     public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
     {
         return getDefaultState().withProperty(FACING_PROP, facing);
-    }}
+    }
+}

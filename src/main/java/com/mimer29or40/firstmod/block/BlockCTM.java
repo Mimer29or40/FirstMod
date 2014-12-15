@@ -14,8 +14,8 @@ public class BlockCTM
         extends FMBlock
 {
     public CTMHandler ctmHandler;
-    private String textureLocation;
-    protected boolean isAdvancedCTM = false;
+    protected boolean  isAdvancedCTM = false;
+    protected String   textureLocation;
 
     public BlockCTM(String name, String texture)
     {

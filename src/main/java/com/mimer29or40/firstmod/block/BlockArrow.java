@@ -20,7 +20,7 @@ public class BlockArrow
     }
 
     @Override
-    @SideOnly( Side.CLIENT)
+    @SideOnly( Side.CLIENT )
     public EnumWorldBlockLayer getBlockLayer()
     {
         return EnumWorldBlockLayer.CUTOUT;

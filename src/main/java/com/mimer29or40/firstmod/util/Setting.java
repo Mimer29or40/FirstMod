@@ -1,7 +1,5 @@
 package com.mimer29or40.firstmod.util;
 
-import com.mimer29or40.firstmod.handler.ConfigurationHandler;
-
 public class Setting
 {
     public static class I
@@ -13,7 +11,6 @@ public class Setting
         private int    defult;
         private int    min;
         private int    max;
-        private ConfigurationHandler.SettingType type = ConfigurationHandler.SettingType.Int;
 
         public I(String category, String name, String label, int defult, int min, int max)
         {
@@ -75,7 +72,6 @@ public class Setting
         private float  defult;
         private float  min;
         private float  max;
-        private ConfigurationHandler.SettingType type = ConfigurationHandler.SettingType.Float;
 
         public F(String category, String name, String label, float defult, float min, float max)
         {
@@ -135,7 +131,6 @@ public class Setting
         private String category;
         private String value;
         private String defult;
-        private ConfigurationHandler.SettingType type = ConfigurationHandler.SettingType.String;
 
         public S(String category, String name, String label, String defult)
         {
@@ -178,12 +173,11 @@ public class Setting
 
     public static class B
     {
-        private String name;
-        private String label;
-        private String category;
+        private String  name;
+        private String  label;
+        private String  category;
         private boolean value;
         private boolean defult;
-        private ConfigurationHandler.SettingType type = ConfigurationHandler.SettingType.Boolean;
 
         public B(String category, String name, String label, boolean defult)
         {

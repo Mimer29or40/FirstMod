@@ -19,13 +19,12 @@ public class ModBlocks
     public static Block arrow;
     public static Block crystal;
     public static Block nics;
-    public static Block redrock_raw;
     public static Block redrock;
 
-//    public static Block ctm_test       = new BlockCTMGlass(Names.Blocks.CTM_TEST, "ctm/test").setAdvCTM(true);
-//    public static Block window         = new BlockCTMGlass(Names.Blocks.WINDOW, "ctm/Window").setAlpha(true).setAdvCTM(true);
-//    public static Block clear_glass    = new BlockCTMGlass("clear_glass", "ctm/clear").setAdvCTM(true);
-//    public static Block redrock_smooth = new BlockCTM(Names.Blocks.REDROCK_SMOOTH, "ctm/redrock_smooth").setAdvCTM(true);
+    //    public static Block ctm_test       = new BlockCTMGlass(Names.Blocks.CTM_TEST, "ctm/test").setAdvCTM(true);
+    //    public static Block window         = new BlockCTMGlass(Names.Blocks.WINDOW, "ctm/Window").setAlpha(true).setAdvCTM(true);
+    //    public static Block clear_glass    = new BlockCTMGlass("clear_glass", "ctm/clear").setAdvCTM(true);
+    //    public static Block redrock_smooth = new BlockCTM(Names.Blocks.REDROCK_SMOOTH, "ctm/redrock_smooth").setAdvCTM(true);
 
     public static void init()
     {
