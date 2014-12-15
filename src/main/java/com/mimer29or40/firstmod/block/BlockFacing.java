@@ -5,8 +5,10 @@ import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
 public class BlockFacing
@@ -53,5 +55,11 @@ public class BlockFacing
     public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
     {
         return getDefaultState().withProperty(FACING_PROP, facing);
+    }
+
+    @Override
+    public ItemStack getPickBlock(MovingObjectPosition target, World world, BlockPos pos)
+    {
+        return new ItemStack(getItem(world, pos), 1, 0);
     }
 }

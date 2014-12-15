@@ -1,13 +1,14 @@
 package com.mimer29or40.firstmod.client.handler;
 
 import com.mimer29or40.firstmod.block.FMBlock;
-import com.mimer29or40.firstmod.item.ItemDebug;
+import com.mimer29or40.firstmod.init.ModItems;
 import com.mimer29or40.firstmod.util.IInfo;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.ScaledResolution;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -101,13 +102,16 @@ public class HUDHandler
             {
                 IBlockState state = mc.theWorld.getBlockState(pos.getBlockPos());
                 Block block = state.getBlock();
-                if(block instanceof IInfo && mc.thePlayer.getHeldItem().getItem() instanceof ItemDebug)
+                if(block instanceof IInfo)
+                    ((IInfo) block).renderInfoOnScreen(mc, event.resolution, mc.theWorld, pos.getBlockPos());
+
+                ItemStack stack = mc.thePlayer.getCurrentEquippedItem();
+                if(stack != null && stack.getItem() == ModItems.debug)
                 {
-                    drawTextAtLocation(((FMBlock) block).getStateName(state), ScreenLocation.TOP_LEFT, event.resolution);
-                    // ((IInfo) block).renderInfoOnScreen(mc, event.resolution, mc.theWorld, pos.getBlockPos());
+                    if(block instanceof FMBlock) drawTextAtLocation(((FMBlock) block).getStateName(state), ScreenLocation.TOP_LEFT, event.resolution);
+                    else drawTextAtLocation(state.toString(), ScreenLocation.TOP_LEFT, event.resolution);
                 }
             }
-
         }
     }
 

@@ -5,7 +5,10 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.item.Item;
 import net.minecraft.util.IStringSerializable;
+
+import java.util.Random;
 
 public class BlockRockVariants
         extends FMBlock
@@ -21,6 +24,11 @@ public class BlockRockVariants
     public BlockRockVariants(String name)
     {
         this(name, Material.rock);
+    }
+
+    public Item getItemDropped(IBlockState state, Random rand, int fortune)
+    {
+        return Item.getItemFromBlock(state.getBlock());
     }
 
     @Override
@@ -52,12 +60,6 @@ public class BlockRockVariants
     {
         return super.getStateName(state) + "_" + ((RockType) state.getValue(VARIANT_PROP)).getName();
     }
-
-//    @Override
-//    public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
-//    {
-//        return getDefaultState().withProperty(VARIANT_PROP, facing);
-//    }
 
     @Override
     public IProperty[] getPresetProperties()

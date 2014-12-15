@@ -1,10 +1,10 @@
 {
   "variants": {
     "axis=up": { "model": "firstmod:arrow" },
-    "axis=down": { "model": "firstmod:arrow", "y": 180 },
+    "axis=down": { "model": "firstmod:arrow", "x": 180 },
     "axis=north": { "model": "firstmod:arrow", "x": 90 },
     "axis=south": { "model": "firstmod:arrow", "x": 270 },
-    "axis=east": { "model": "firstmod:arrow", "z": 90 },
-    "axis=west": { "model": "firstmod:arrow", "z": 270 }
+    "axis=east": { "model": "firstmod:arrow", "x": 90, "y": 90 },
+    "axis=west": { "model": "firstmod:arrow", "x": 90, "y": 270 }
   }
 }
