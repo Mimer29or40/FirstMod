@@ -35,9 +35,7 @@ public class HUDHandler
 
                 ItemStack stack = mc.thePlayer.getCurrentEquippedItem();
                 if(stack != null && stack.getItem() == ModItems.debug)
-                {
                     drawTextAtLocation(block.getUnlocalizedName() + BlockStateUtils.getStates(state), ScreenLocation.TOP_LEFT, event.resolution);
-                }
             }
         }
     }
