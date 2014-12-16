@@ -11,18 +11,18 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
-public abstract class BlockFacing
+public abstract class BlockAxis
         extends FMBlock
 {
-    protected static final PropertyEnum FACING_PROP = PropertyEnum.create("facing", EnumFacing.class);
+    protected static final PropertyEnum AXIS_PROP = PropertyEnum.create("axis", EnumFacing.Axis.class);
 
-    public BlockFacing(String name, Material material)
+    public BlockAxis(String name, Material material)
     {
         super(name, material);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(FACING_PROP, EnumFacing.UP));
+        this.setDefaultState(this.blockState.getBaseState().withProperty(AXIS_PROP, EnumFacing.Axis.Y));
     }
 
-    public BlockFacing(String name)
+    public BlockAxis(String name)
     {
         this(name, Material.rock);
     }
@@ -30,31 +30,31 @@ public abstract class BlockFacing
     @Override
     public IBlockState getStateFromMeta(int meta)
     {
-        return this.getDefaultState().withProperty(FACING_PROP, EnumFacing.values()[meta]);
+        return this.getDefaultState().withProperty(AXIS_PROP, EnumFacing.values()[meta]);
     }
 
     @Override
     public int getMetaFromState(IBlockState state)
     {
-        return ((EnumFacing) state.getValue(FACING_PROP)).ordinal();
+        return ((EnumFacing) state.getValue(AXIS_PROP)).ordinal();
     }
 
     @Override
     protected BlockState createBlockState()
     {
-        return new BlockState(this, FACING_PROP);
+        return new BlockState(this, AXIS_PROP);
     }
 
     @Override
     public String getStateName(IBlockState state)
     {
-        return ((EnumFacing) state.getValue(FACING_PROP)).getName();
+        return ((EnumFacing.Axis) state.getValue(AXIS_PROP)).getName();
     }
 
     @Override
     public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
     {
-        return super.onBlockPlaced(worldIn, pos, facing, hitX, hitY, hitZ, meta, placer).withProperty(FACING_PROP, facing);
+        return super.onBlockPlaced(worldIn, pos, facing, hitX, hitY, hitZ, meta, placer).withProperty(AXIS_PROP, facing.getAxis());
     }
 
     @Override

@@ -19,7 +19,37 @@ import org.lwjgl.opengl.GL11;
 @SideOnly(Side.CLIENT)
 public class HUDHandler
 {
-    public static void drawTextAtCoord(Object text, int x, int y)
+    @SubscribeEvent
+    public void onDrawScreen(RenderGameOverlayEvent.Post event)
+    {
+        if(event.type == RenderGameOverlayEvent.ElementType.ALL)
+        {
+            Minecraft mc = Minecraft.getMinecraft();
+            MovingObjectPosition pos = mc.objectMouseOver;
+            if(pos != null)
+            {
+                IBlockState state = mc.theWorld.getBlockState(pos.getBlockPos());
+                Block block = state.getBlock();
+                if(block instanceof IInfo)
+                    ((IInfo) block).renderInfoOnScreen(mc, event.resolution, mc.theWorld, pos.getBlockPos());
+
+                ItemStack stack = mc.thePlayer.getCurrentEquippedItem();
+                if(stack != null && stack.getItem() == ModItems.debug)
+                {
+                    if(block instanceof FMBlock)
+                    {
+                        drawTextAtLocation(block.getUnlocalizedName() + "_" + ((FMBlock) block).getStateName(state), ScreenLocation.TOP_LEFT, event.resolution);
+                    }
+                    else
+                    {
+                        drawTextAtLocation(state.toString(), ScreenLocation.TOP_LEFT, event.resolution);
+                    }
+                }
+            }
+        }
+    }
+
+    private static void drawTextAtCoord(Object text, int x, int y)
     {
         GL11.glEnable(GL11.GL_BLEND);
         GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
@@ -29,7 +59,7 @@ public class HUDHandler
         GL11.glDisable(GL11.GL_BLEND);
     }
 
-    public static void drawTextAtLocation(Object obj, ScreenLocation location, ScaledResolution res)
+    private static void drawTextAtLocation(Object obj, ScreenLocation location, ScaledResolution res)
     {
         FontRenderer fontRenderer = Minecraft.getMinecraft().fontRendererObj;
         String text = String.valueOf(obj);
@@ -91,31 +121,7 @@ public class HUDHandler
         GL11.glDisable(GL11.GL_BLEND);
     }
 
-    @SubscribeEvent
-    public void onDrawScreen(RenderGameOverlayEvent.Post event)
-    {
-        if(event.type == RenderGameOverlayEvent.ElementType.ALL)
-        {
-            Minecraft mc = Minecraft.getMinecraft();
-            MovingObjectPosition pos = mc.objectMouseOver;
-            if(pos != null)
-            {
-                IBlockState state = mc.theWorld.getBlockState(pos.getBlockPos());
-                Block block = state.getBlock();
-                if(block instanceof IInfo)
-                    ((IInfo) block).renderInfoOnScreen(mc, event.resolution, mc.theWorld, pos.getBlockPos());
-
-                ItemStack stack = mc.thePlayer.getCurrentEquippedItem();
-                if(stack != null && stack.getItem() == ModItems.debug)
-                {
-                    if(block instanceof FMBlock) drawTextAtLocation(((FMBlock) block).getStateName(state), ScreenLocation.TOP_LEFT, event.resolution);
-                    else drawTextAtLocation(state.toString(), ScreenLocation.TOP_LEFT, event.resolution);
-                }
-            }
-        }
-    }
-
-    public enum ScreenLocation
+    private enum ScreenLocation
     {
         TOP, BOTTOM, LEFT, RIGHT, TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT, CENTER
     }

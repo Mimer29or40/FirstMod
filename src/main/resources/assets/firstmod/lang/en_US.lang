@@ -1,37 +1,37 @@
 # Items
-item.firstmod:mapleLeaf.name=Maple Leaf of Awesomeness
-item.firstmod:torch.name=Torch of Liberty
-item.firstmod:debug.name=Debug
+item.mapleLeaf.name=Maple Leaf of Awesomeness
+item.torch.name=Torch of Liberty
+item.debug.name=Debug
 
 # Blocks
-tile.firstmod:flag.name=American Flag
-tile.firstmod:frame.name=Frame
-tile.firstmod:arrow.name=Arrow Block
-tile.firstmod:crystal.name=Mysterious Crystal
-tile.firstmod:starfield.name=Starfield
-tile.firstmod:nics.name=Nics Block
-tile.firstmod:test.name=CTM Test
-tile.firstmod:window.name=Window
-tile.firstmod:clear_glass.name=Clear Glass
-tile.firstmod:redrock.redrock_cobble.name=Red Cobblestone
-tile.firstmod:redrock.redrock_cobble_mossy.name=Mossy Red Cobblestone
-tile.firstmod:redrock.redrock_bricks.name=Mossy Red Rock Bricks
-tile.firstmod:redrock.redrock_bricks_mossy.name=Red Rock Bricks
-tile.firstmod:redrock.redrock_slab.name=Red Rock Slab
-tile.firstmod:redrock.redrock_slab_side.name=Double Red Rock Slab
-tile.firstmod:redrock.redrock_carved.name=Carved Red Rock
-tile.firstmod:redrock.redrock_smooth.name=Red Rock
+tile.flag.name=American Flag
+tile.frame.name=Frame
+tile.arrow.name=Arrow Block
+tile.crystal.name=Mysterious Crystal
+tile.starfield.name=Starfield
+tile.nics.name=Nics Block
+tile.test.name=CTM Test
+tile.window.name=Window
+tile.clear_glass.name=Clear Glass
+tile.redrock.cobble.name=Red Cobblestone
+tile.redrock.cobble_mossy.name=Mossy Red Cobblestone
+tile.redrock.bricks.name=Mossy Red Rock Bricks
+tile.redrock.bricks_mossy.name=Red Rock Bricks
+tile.redrock.slab.name=Red Rock Slab
+tile.redrock.slab_side.name=Double Red Rock Slab
+tile.redrock.carved.name=Carved Red Rock
+tile.redrock.smooth.name=Red Rock
 
 # Creative Tab
 itemGroup.firstmod=First Mod
 
 # GUI Factory
-info.firstmod.config.section.general=General
-info.firstmod.config.section.general.tooltip=General category for random stuff
-info.firstmod.config.section.render=Render
-info.firstmod.config.section.render.tooltip=Render category for some block rendering
+info.config.section.general=General
+info.config.section.general.tooltip=General category for random stuff
+info.config.section.render=Render
+info.config.section.render.tooltip=Render category for some block rendering
 
 # Keys
-keys.firstmod.category=First Mod
-keys.firstmod.charge=Charge
-keys.firstmod.release=Release
+keys.category=First Mod
+keys.charge=Charge
+keys.release=Release

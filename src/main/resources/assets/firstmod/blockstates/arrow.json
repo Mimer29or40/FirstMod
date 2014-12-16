@@ -1,10 +1,10 @@
 {
   "variants": {
-    "axis=up": { "model": "firstmod:arrow" },
-    "axis=down": { "model": "firstmod:arrow", "x": 180 },
-    "axis=north": { "model": "firstmod:arrow", "x": 90 },
-    "axis=south": { "model": "firstmod:arrow", "x": 270 },
-    "axis=east": { "model": "firstmod:arrow", "x": 90, "y": 90 },
-    "axis=west": { "model": "firstmod:arrow", "x": 90, "y": 270 }
+    "facing=up": { "model": "firstmod:arrow" },
+    "facing=down": { "model": "firstmod:arrow", "x": 180 },
+    "facing=north": { "model": "firstmod:arrow", "x": 90 },
+    "facing=south": { "model": "firstmod:arrow", "x": 270 },
+    "facing=east": { "model": "firstmod:arrow", "x": 90, "y": 90 },
+    "facing=west": { "model": "firstmod:arrow", "x": 90, "y": 270 }
   }
 }

@@ -9,7 +9,6 @@ import java.util.Set;
 public class ConfigGUIFactory
         implements IModGuiFactory
 {
-
     @Override
     public void initialize(Minecraft minecraftInstance)
     {

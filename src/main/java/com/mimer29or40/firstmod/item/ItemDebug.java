@@ -28,9 +28,13 @@ public class ItemDebug
         {
             ChatHelper.toPlayer(player, state.toString());
             // ChatHelper.toAllPlayers("Everybody");
-            return true;
+            ChatHelper.toPlayer(player, block.getUnlocalizedName() + "_" + ((FMBlock) block).getStateName(state));
         }
-        return false;
+        else
+        {
+            ChatHelper.toPlayer(player, block.getUnlocalizedName());
+        }
+        return true;
     }
 
 }

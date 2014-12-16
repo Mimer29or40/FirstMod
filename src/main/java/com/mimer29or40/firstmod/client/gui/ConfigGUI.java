@@ -31,8 +31,8 @@ public class ConfigGUI
         sections.put(RenderCategory.class, Settings.CATEGORY_RENDER);
 
         List< IConfigElement > list = new ArrayList< IConfigElement >();
-        list.add(new DummyConfigElement.DummyCategoryElement(sections.get(GeneralCategory.class), "info.firstmod.config.section.general", GeneralCategory.class));
-        list.add(new DummyConfigElement.DummyCategoryElement(sections.get(RenderCategory.class), "info.firstmod.config.section.render", RenderCategory.class));
+        list.add(new DummyConfigElement.DummyCategoryElement(sections.get(GeneralCategory.class), "info.config.section.general", GeneralCategory.class));
+        list.add(new DummyConfigElement.DummyCategoryElement(sections.get(RenderCategory.class), "info.config.section.render", RenderCategory.class));
 
         return list;
     }
@@ -49,7 +49,13 @@ public class ConfigGUI
         protected GuiScreen buildChildScreen()
         {
             String category = sections.get(this.getClass());
-            return new GuiConfig(this.owningScreen, (new ConfigElement(ConfigurationHandler.config.getCategory(category.toLowerCase()))).getChildElements(), Reference.MOD_ID, category, this.configElement.requiresWorldRestart() || this.owningScreen.allRequireWorldRestart, this.configElement.requiresMcRestart() || this.owningScreen.allRequireMcRestart, GuiConfig.getAbridgedConfigPath(ConfigurationHandler.config.getConfigFile().getAbsolutePath()));
+            return new GuiConfig(this.owningScreen,
+                    (new ConfigElement(ConfigurationHandler.config.getCategory(category.toLowerCase()))).getChildElements(),
+                    Reference.MOD_ID, category,
+                    this.configElement.requiresWorldRestart() || this.owningScreen.allRequireWorldRestart,
+                    this.configElement.requiresMcRestart() || this.owningScreen.allRequireMcRestart,
+                    GuiConfig.getAbridgedConfigPath(ConfigurationHandler.config.getConfigFile().getAbsolutePath())
+            );
         }
     }
 

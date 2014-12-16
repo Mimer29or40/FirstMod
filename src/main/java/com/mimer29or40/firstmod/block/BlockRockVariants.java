@@ -10,20 +10,15 @@ import net.minecraft.util.IStringSerializable;
 
 import java.util.Random;
 
-public class BlockRockVariants
+public abstract class BlockRockVariants
         extends FMBlock
 {
     protected static final PropertyEnum VARIANT_PROP = PropertyEnum.create("variant", RockType.class);
 
-    public BlockRockVariants(String name, Material material)
-    {
-        super(name, material);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT_PROP, RockType.SMOOTH));
-    }
-
     public BlockRockVariants(String name)
     {
-        this(name, Material.rock);
+        super(name, Material.rock);
+        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT_PROP, RockType.SMOOTH));
     }
 
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
@@ -58,7 +53,7 @@ public class BlockRockVariants
     @Override
     public String getStateName(IBlockState state)
     {
-        return super.getStateName(state) + "_" + ((RockType) state.getValue(VARIANT_PROP)).getName();
+        return ((RockType) state.getValue(VARIANT_PROP)).getName();
     }
 
     @Override

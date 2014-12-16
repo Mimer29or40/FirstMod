@@ -1,13 +1,11 @@
 package com.mimer29or40.firstmod.init;
 
-import com.mimer29or40.firstmod.FirstMod;
-import com.mimer29or40.firstmod.item.FMItem;
 import com.mimer29or40.firstmod.item.ItemDebug;
 import com.mimer29or40.firstmod.item.ItemMapleLeaf;
 import com.mimer29or40.firstmod.item.ItemTorch;
 import com.mimer29or40.firstmod.reference.Names;
 import com.mimer29or40.firstmod.reference.Reference;
-import net.minecraft.client.resources.model.ModelBakery;
+import com.mimer29or40.firstmod.util.helpers.RegisterHelper;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -20,18 +18,8 @@ public class ModItems
 
     public static void init()
     {
-        mapleLeaf = registerItem(new ItemMapleLeaf(), Names.Items.MAPLE_LEAF);
-        torch = registerItem(new ItemTorch(), Names.Items.TORCH);
-        debug = registerItem(new ItemDebug(), Names.Items.DEBUG);
-    }
-
-    private static Item registerItem(FMItem item, String name)
-    {
-        GameRegistry.registerItem(item, name);
-
-        ModelBakery.addVariantName(item, Reference.MOD_ID + ":" + name);
-        FirstMod.proxy.registerItemForMeshing(item, 0, name); //TODO Make metadata work
-
-        return item;
+        mapleLeaf = RegisterHelper.registerItem(new ItemMapleLeaf(), Names.Items.MAPLE_LEAF);
+        torch = RegisterHelper.registerItem(new ItemTorch(), Names.Items.TORCH);
+        debug = RegisterHelper.registerItem(new ItemDebug(), Names.Items.DEBUG);
     }
 }

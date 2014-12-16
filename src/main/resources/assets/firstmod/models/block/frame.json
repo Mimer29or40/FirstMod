@@ -1,5 +1,5 @@
 {
-  "parent": "firstmod:block/cube",
+  "parent": "block/cube",
   "textures": {
     "particle": "firstmod:blocks/frame_top",
     "down": "firstmod:blocks/frame_bottom",
