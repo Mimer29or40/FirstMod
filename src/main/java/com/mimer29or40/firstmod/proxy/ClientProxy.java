@@ -8,6 +8,7 @@ import com.mimer29or40.firstmod.client.helpers.ModelHelper;
 import com.mimer29or40.firstmod.client.settings.Keybindings;
 import com.mimer29or40.firstmod.item.FMItem;
 import com.mimer29or40.firstmod.reference.Reference;
+import com.mimer29or40.firstmod.util.helpers.LogHelper;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.FMLCommonHandler;
@@ -19,12 +20,13 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.ArrayList;
 
+@SuppressWarnings( "unchecked" )
 @SideOnly(Side.CLIENT)
 public class ClientProxy
         extends CommonProxy
 {
-    private static ArrayList< ModelBlockEntry > blocksToRegister = new ArrayList();
-    private static ArrayList< ModelItemEntry >  itemsToRegister  = new ArrayList();
+    private static final ArrayList< ModelBlockEntry > blocksToRegister = new ArrayList();
+    private static final ArrayList< ModelItemEntry >  itemsToRegister  = new ArrayList();
 
     @Override
 
@@ -53,6 +55,8 @@ public class ClientProxy
     public void postInit(FMLPostInitializationEvent event)
     {
         super.postInit(event);
+
+        LogHelper.info("First Mod Client has finished initializing");
     }
 
     private void registerKeyBindings()
@@ -88,9 +92,9 @@ public class ClientProxy
 
     private static class ModelBlockEntry
     {
-        public FMBlock block;
-        public int     metadata;
-        public String  name;
+        public final FMBlock block;
+        public final int     metadata;
+        public final String  name;
 
         public ModelBlockEntry(FMBlock block, int metadata, String name)
         {
@@ -102,9 +106,9 @@ public class ClientProxy
 
     private static class ModelItemEntry
     {
-        public FMItem item;
-        public int    metadata;
-        public String name;
+        public final FMItem item;
+        public final int    metadata;
+        public final String name;
 
         public ModelItemEntry(FMItem item, int metadata, String name)
         {

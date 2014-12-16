@@ -2,7 +2,6 @@ package com.mimer29or40.firstmod.client.handler;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
-import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.relauncher.Side;
@@ -29,11 +28,5 @@ public class ClientEventHandler
     public int getTicksInGame()
     {
         return ticksInGame;
-    }
-
-    @SubscribeEvent
-    public void onRenderGameOverlay(RenderGameOverlayEvent event)
-    {
-        // NOOP
     }
 }

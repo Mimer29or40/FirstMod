@@ -21,6 +21,11 @@ tile.redrock.slab.name=Red Rock Slab
 tile.redrock.slab_side.name=Double Red Rock Slab
 tile.redrock.carved.name=Carved Red Rock
 tile.redrock.smooth.name=Red Rock
+tile.log.red.name=Red Log
+tile.log.green.name=Green Log
+tile.log.blue.name=Blue Log
+tile.log.white.name=White Log
+tile.log.black.name=Black Log
 
 # Creative Tab
 itemGroup.firstmod=First Mod

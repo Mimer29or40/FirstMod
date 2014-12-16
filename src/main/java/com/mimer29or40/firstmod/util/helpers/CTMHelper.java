@@ -8,7 +8,7 @@ import net.minecraft.world.IBlockAccess;
 
 public class CTMHelper
 {
-    private static int[][] submapCords  = {
+    private static final int[][] submapCords  = {
             // ctm1
             { 0, 1, 8, 9 },      // 1,1     | 0  1| 2  3| 4  5| 6  7|
             { 6, 17, 8, 9 },     // 2,1     | 8  9|10 11|12 13|14 15|
@@ -62,7 +62,7 @@ public class CTMHelper
             { 4, 3, 12, 13 },    // 2,4
             { 4, 5, 12, 13 }     // 3,4
     };
-    private static int[]   textureNames = {
+    private static final int[]   textureNames = {
             // -ctm1.png
             0,    // (1,1)
             1,    // (2,1)

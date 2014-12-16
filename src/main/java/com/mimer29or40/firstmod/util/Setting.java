@@ -4,13 +4,13 @@ public class Setting
 {
     public static class I
     {
-        private String name;
-        private String label;
-        private String category;
+        private final String name;
+        private final String label;
+        private final String category;
         private int    value;
-        private int    defult;
-        private int    min;
-        private int    max;
+        private final int    defult;
+        private final int    min;
+        private final int    max;
 
         public I(String category, String name, String label, int defult, int min, int max)
         {
@@ -65,13 +65,13 @@ public class Setting
 
     public static class F
     {
-        private String name;
-        private String label;
-        private String category;
+        private final String name;
+        private final String label;
+        private final String category;
         private float  value;
-        private float  defult;
-        private float  min;
-        private float  max;
+        private final float  defult;
+        private final float  min;
+        private final float  max;
 
         public F(String category, String name, String label, float defult, float min, float max)
         {
@@ -126,11 +126,11 @@ public class Setting
 
     public static class S
     {
-        private String name;
-        private String label;
-        private String category;
+        private final String name;
+        private final String label;
+        private final String category;
         private String value;
-        private String defult;
+        private final String defult;
 
         public S(String category, String name, String label, String defult)
         {
@@ -173,11 +173,11 @@ public class Setting
 
     public static class B
     {
-        private String  name;
-        private String  label;
-        private String  category;
+        private final String  name;
+        private final String  label;
+        private final String  category;
         private boolean value;
-        private boolean defult;
+        private final boolean defult;
 
         public B(String category, String name, String label, boolean defult)
         {

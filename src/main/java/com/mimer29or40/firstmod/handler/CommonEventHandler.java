@@ -7,6 +7,7 @@ import net.minecraftforge.event.entity.player.*;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
+@SuppressWarnings( "EmptyMethod" )
 public class CommonEventHandler
 {
     @SubscribeEvent

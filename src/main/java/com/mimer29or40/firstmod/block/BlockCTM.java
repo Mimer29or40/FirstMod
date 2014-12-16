@@ -13,9 +13,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class BlockCTM
         extends FMBlock
 {
-    public CTMHandler ctmHandler;
-    protected boolean  isAdvancedCTM = false;
-    protected String   textureLocation;
+    public final CTMHandler ctmHandler;
+    protected boolean isAdvancedCTM = false;
+    protected final String  textureLocation;
 
     public BlockCTM(String name, String texture)
     {

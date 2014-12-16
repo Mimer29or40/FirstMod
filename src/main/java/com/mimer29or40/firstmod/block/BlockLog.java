@@ -5,10 +5,14 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.IStringSerializable;
+import net.minecraft.util.MovingObjectPosition;
+import net.minecraft.world.World;
 
-public class BlockLog
+public class BlockLog // TODO Fix logs not showing in inventory
         extends BlockLogBase
 {
     public static final PropertyEnum VARIANT_PROP = PropertyEnum.create("variant", LogType.class);
@@ -38,23 +42,27 @@ public class BlockLog
     public int getMetaFromState(IBlockState state)
     {
         int baseMeta = ((LogType)state.getValue(VARIANT_PROP)).ordinal();
-
         return baseMeta * 3 + ((EnumFacing.Axis)state.getValue(AXIS_PROP)).ordinal();
     }
 
     @Override
     protected BlockState createBlockState()
     {
-        return new BlockState(this, new IProperty[] { AXIS_PROP, VARIANT_PROP });
+        return new BlockState(this, AXIS_PROP, VARIANT_PROP);
     }
 
-
+    @Override
+    public ItemStack getPickBlock(MovingObjectPosition target, World world, BlockPos pos)
+    {
+        IBlockState state = world.getBlockState(pos);
+        int meta = 3 * ((LogType)state.getValue(VARIANT_PROP)).ordinal();
+        return new ItemStack(getItem(world, pos), 1, meta);
+    }
 
     @Override
     public String getStateName(IBlockState state)
     {
-//        return ((LogType)state.getValue(VARIANT_PROP)).getName() + "_log";
-        return ((LogType) state.getValue(VARIANT_PROP)).getName() + "_log"; // TODO fix this name system
+        return ((LogType) state.getValue(VARIANT_PROP)).getName();
     }
 
     @Override

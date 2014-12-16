@@ -8,7 +8,7 @@ import net.minecraft.block.Block;
 
 public class CTMHandler
 {
-    public CTMBlock ctmBlock = new CTMBlock();
+    public final CTMBlock ctmBlock = new CTMBlock();
     public String blockName;
     public String texture;
 

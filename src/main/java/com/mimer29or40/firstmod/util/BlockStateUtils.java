@@ -9,8 +9,21 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
+@SuppressWarnings( "ALL" )
 public class BlockStateUtils
 {
+    public static String getStates(IBlockState state)
+    {
+        String states = "";
+        Object[] stateArray = state.getProperties().values().toArray();
+        if(stateArray.length > 0)
+            for(Object prop : stateArray)
+            {
+                states += "_" + prop.toString();
+            }
+        return states;
+    }
+
     public static IProperty getPropertyByName(IBlockState blockState, String propertyName)
     {
         for(IProperty property : (ImmutableSet< IProperty >) blockState.getProperties().keySet())

@@ -30,7 +30,6 @@ public class ItemBlockWithVariants
         {
             return super.getUnlocalizedName() + "." + block.getStateName(block.getStateFromMeta(stack.getMetadata()));
         }
-
         else
         {
             return super.getUnlocalizedName();

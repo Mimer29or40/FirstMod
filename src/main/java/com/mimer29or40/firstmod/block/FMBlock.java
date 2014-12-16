@@ -15,10 +15,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 
+@SuppressWarnings( "unchecked" )
 public class FMBlock
         extends Block
 {
-    public ImmutableSet< IBlockState > presetStates;
+    public final ImmutableSet< IBlockState > presetStates;
 
     public FMBlock(String name, Material material)
     {

@@ -16,7 +16,7 @@ public class ModBlocks
     public static Block crystal;
     public static Block nics;
     public static Block redrock;
-//    public static Block log;
+    public static Block log;
 
     //    public static Block ctm_test       = new BlockCTMGlass(Names.Blocks.CTM_TEST, "ctm/test").setAdvCTM(true);
     //    public static Block window         = new BlockCTMGlass(Names.Blocks.WINDOW, "ctm/Window").setAlpha(true).setAdvCTM(true);
@@ -31,7 +31,7 @@ public class ModBlocks
         crystal = RegisterHelper.registerBlock(new BlockCrystal(), Names.Blocks.CRYSTAL);
         nics = RegisterHelper.registerBlock(new BlockNics(), Names.Blocks.NICS);
         redrock = RegisterHelper.registerBlock(new BlockRedRock(), Names.Blocks.REDROCK);
-//        log = RegisterHelper.registerBlock(new BlockLog(), Names.Blocks.LOG);
+        log = RegisterHelper.registerBlock(new BlockLog(), Names.Blocks.LOG);
 
         //        GameRegistry.registerBlock(ctm_test, Names.Blocks.CTM_TEST);
         //        GameRegistry.registerBlock(window, Names.Blocks.WINDOW);

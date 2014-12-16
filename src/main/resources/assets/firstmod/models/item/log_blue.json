@@ -1,5 +1,5 @@
 {
-    "parent": "firstmod:block/red_log",
+    "parent": "firstmod:block/log_blue",
     "display": {
         "thirdperson": {
             "rotation": [ 10, -45, 170 ],

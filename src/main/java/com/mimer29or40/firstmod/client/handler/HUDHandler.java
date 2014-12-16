@@ -1,7 +1,7 @@
 package com.mimer29or40.firstmod.client.handler;
 
-import com.mimer29or40.firstmod.block.FMBlock;
 import com.mimer29or40.firstmod.init.ModItems;
+import com.mimer29or40.firstmod.util.BlockStateUtils;
 import com.mimer29or40.firstmod.util.IInfo;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -20,7 +20,7 @@ import org.lwjgl.opengl.GL11;
 public class HUDHandler
 {
     @SubscribeEvent
-    public void onDrawScreen(RenderGameOverlayEvent.Post event)
+    public void onRenderGameOverlayPost(RenderGameOverlayEvent.Post event)
     {
         if(event.type == RenderGameOverlayEvent.ElementType.ALL)
         {
@@ -36,14 +36,7 @@ public class HUDHandler
                 ItemStack stack = mc.thePlayer.getCurrentEquippedItem();
                 if(stack != null && stack.getItem() == ModItems.debug)
                 {
-                    if(block instanceof FMBlock)
-                    {
-                        drawTextAtLocation(block.getUnlocalizedName() + "_" + ((FMBlock) block).getStateName(state), ScreenLocation.TOP_LEFT, event.resolution);
-                    }
-                    else
-                    {
-                        drawTextAtLocation(state.toString(), ScreenLocation.TOP_LEFT, event.resolution);
-                    }
+                    drawTextAtLocation(block.getUnlocalizedName() + BlockStateUtils.getStates(state), ScreenLocation.TOP_LEFT, event.resolution);
                 }
             }
         }

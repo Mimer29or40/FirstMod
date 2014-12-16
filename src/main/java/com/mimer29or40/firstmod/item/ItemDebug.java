@@ -1,6 +1,5 @@
 package com.mimer29or40.firstmod.item;
 
-import com.mimer29or40.firstmod.block.FMBlock;
 import com.mimer29or40.firstmod.reference.Names;
 import com.mimer29or40.firstmod.util.helpers.ChatHelper;
 import net.minecraft.block.Block;
@@ -24,16 +23,7 @@ public class ItemDebug
     {
         IBlockState state = world.getBlockState(pos);
         Block block = state.getBlock();
-        if(block instanceof FMBlock)
-        {
-            ChatHelper.toPlayer(player, state.toString());
-            // ChatHelper.toAllPlayers("Everybody");
-            ChatHelper.toPlayer(player, block.getUnlocalizedName() + "_" + ((FMBlock) block).getStateName(state));
-        }
-        else
-        {
-            ChatHelper.toPlayer(player, block.getUnlocalizedName());
-        }
+        ChatHelper.toPlayer(player, state.toString());
         return true;
     }
 

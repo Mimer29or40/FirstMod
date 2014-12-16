@@ -12,7 +12,7 @@ import java.util.UUID;
 
 public class ItemHelper
 {
-    public static Comparator< ItemStack > comparator = new Comparator< ItemStack >()
+    public static final Comparator< ItemStack > comparator = new Comparator< ItemStack >()
     {
         public int compare(ItemStack itemStack1, ItemStack itemStack2)
         {

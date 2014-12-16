@@ -8,6 +8,7 @@ import com.mimer29or40.firstmod.init.ModBlocks;
 import com.mimer29or40.firstmod.init.ModItems;
 import com.mimer29or40.firstmod.init.Recipes;
 import com.mimer29or40.firstmod.item.FMItem;
+import com.mimer29or40.firstmod.util.helpers.LogHelper;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -34,7 +35,7 @@ public class CommonProxy
 
     public void postInit(FMLPostInitializationEvent event)
     {
-        // NOOP
+        LogHelper.info("First Mod Server has finished initializing");
     }
 
     public void registerRenderers()

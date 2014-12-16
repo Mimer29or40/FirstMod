@@ -18,7 +18,7 @@ import java.util.Map;
 public class ConfigGUI
         extends GuiConfig
 {
-    private static Map< Class< ? extends FirstModEntry >, String > sections = new HashMap< Class< ? extends FirstModEntry >, String >();
+    private static final Map< Class< ? extends FirstModEntry >, String > sections = new HashMap< Class< ? extends FirstModEntry >, String >();
 
     public ConfigGUI(GuiScreen parentScreen)
     {
