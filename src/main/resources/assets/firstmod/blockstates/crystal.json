@@ -1,5 +1,6 @@
 {
-  "variants": {
-    "normal": {"model": "firstmod:crystal"}
-  }
+    "variants":
+    {
+        "normal": { "model": "firstmod:crystal" }
+    }
 }

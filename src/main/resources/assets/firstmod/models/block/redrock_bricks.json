@@ -1,6 +1,7 @@
 {
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "firstmod:blocks/redrock_bricks"
-  }
+    "parent": "block/cube_all",
+    "textures":
+    {
+        "all": "firstmod:blocks/redrock_bricks"
+    }
 }

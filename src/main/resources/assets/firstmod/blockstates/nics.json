@@ -1,5 +1,6 @@
 {
-  "variants": {
-    "normal": {"model": "firstmod:nics"}
-  }
+    "variants":
+    {
+        "normal": { "model": "firstmod:nics" }
+    }
 }

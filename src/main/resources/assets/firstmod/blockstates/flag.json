@@ -1,5 +1,6 @@
 {
-  "variants": {
-    "normal": {"model": "firstmod:flag"}
-  }
+    "variants":
+    {
+     "normal": { "model": "firstmod:flag" }
+    }
 }

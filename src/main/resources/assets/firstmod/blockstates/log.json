@@ -1,20 +1,20 @@
 {
-    "variants": {
-        "axis=x,variant=red": { "model": "firstmod:log_red", "x": 90, "y": 90 },
-        "axis=y,variant=red": { "model": "firstmod:log_red" },
-        "axis=z,variant=red": { "model": "firstmod:log_red", "x": 90 },
+    "variants":
+    {
+        "axis=y,variant=red":   { "model": "firstmod:log_red"                     },
+        "axis=z,variant=red":   { "model": "firstmod:log_red"  , "x": 90          },
+        "axis=x,variant=red":   { "model": "firstmod:log_red"  , "x": 90, "y": 90 },
+        "axis=y,variant=green": { "model": "firstmod:log_green"                   },
+        "axis=z,variant=green": { "model": "firstmod:log_green", "x": 90          },
         "axis=x,variant=green": { "model": "firstmod:log_green", "x": 90, "y": 90 },
-        "axis=y,variant=green": { "model": "firstmod:log_green" },
-        "axis=z,variant=green": { "model": "firstmod:log_green", "x": 90 },
-        "axis=x,variant=blue": { "model": "firstmod:log_blue", "x": 90, "y": 90 },
-        "axis=y,variant=blue": { "model": "firstmod:log_blue" },
-        "axis=z,variant=blue": { "model": "firstmod:log_blue", "x": 90 },
+        "axis=y,variant=blue":  { "model": "firstmod:log_blue"                    },
+        "axis=z,variant=blue":  { "model": "firstmod:log_blue" , "x": 90          },
+        "axis=x,variant=blue":  { "model": "firstmod:log_blue" , "x": 90, "y": 90 },
+        "axis=y,variant=white": { "model": "firstmod:log_white"                   },
+        "axis=z,variant=white": { "model": "firstmod:log_white", "x": 90          },
         "axis=x,variant=white": { "model": "firstmod:log_white", "x": 90, "y": 90 },
-        "axis=y,variant=white": { "model": "firstmod:log_white" },
-        "axis=z,variant=white": { "model": "firstmod:log_white", "x": 90 },
+        "axis=y,variant=black": { "model": "firstmod:log_black"                   },
+        "axis=z,variant=black": { "model": "firstmod:log_black", "x": 90          }
         "axis=x,variant=black": { "model": "firstmod:log_black", "x": 90, "y": 90 },
-        "axis=y,variant=black": { "model": "firstmod:log_black" },
-        "axis=z,variant=black": { "model": "firstmod:log_black", "x": 90 }
     }
 }
-
