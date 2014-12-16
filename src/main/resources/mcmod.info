@@ -1,21 +1,21 @@
 [
-{
-  "modid": "firstMod",
-  "name": "My First Mod",
-  "description": "Mimer29or40 mod from Pahimar's Lets Mod Reboot",
-  "version": "${mod_version}",
-  "mcversion": "${minecraft_version}",
-  "url": "",
-  "updateUrl": "",
-  "authorList": [
-    "Mimer29or40"
-  ],
-  "credits": "Pahimar",
-  "logoFile": "",
-  "screenshots": [
-  ],
-  "parent":"",
-  "dependencies": [
-  ]
-}
+  {
+    "modid": "firstMod",
+    "name": "My First Mod",
+    "description": "Mimer29or40 mod from Pahimar's Lets Mod Reboot",
+    "version": "${mod_version}",
+    "mcversion": "${minecraft_version}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "Mimer29or40"
+    ],
+    "credits": "Pahimar",
+    "logoFile": "",
+    "screenshots": [
+    ],
+    "parent":"",
+    "dependencies": [
+    ]
+  }
 ]
