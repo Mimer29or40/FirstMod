@@ -10,7 +10,8 @@ public class CreativeTab
     public static final CreativeTabs FM_TAB = new CreativeTabs(Reference.MOD_ID.toLowerCase())
     {
         @Override
-        public Item getTabIconItem() {
+        public Item getTabIconItem()
+        {
             return ModItems.torch;
         }
     };

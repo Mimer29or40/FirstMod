@@ -1,14 +1,22 @@
 package com.mimer29or40.firstmod.proxy;
 
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import com.mimer29or40.firstmod.block.FMBlock;
+import com.mimer29or40.firstmod.item.FMItem;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 public interface IProxy
 {
-    public abstract void preInit(FMLPreInitializationEvent event);
+    public void preInit(FMLPreInitializationEvent event);
 
-    public abstract void init(FMLInitializationEvent event);
+    public void init(FMLInitializationEvent event);
 
-    public abstract void postInit(FMLPostInitializationEvent event);
+    public void postInit(FMLPostInitializationEvent event);
+
+    public void registerRenderers();
+
+    public void registerBlockForMeshing(FMBlock block, int metadata, String name);
+
+    public void registerItemForMeshing(FMItem item, int metadata, String name);
 }

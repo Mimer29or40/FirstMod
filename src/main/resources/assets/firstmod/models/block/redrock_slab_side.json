@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_column",
+    "textures":
+    {
+        "end":  "firstmod:blocks/redrock_slab",
+        "side": "firstmod:blocks/redrock_slab_side"
+    }
+}

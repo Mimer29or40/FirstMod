@@ -6,20 +6,20 @@ public class Names
     {
         public static final String MAPLE_LEAF = "mapleLeaf";
         public static final String TORCH      = "torch";
+        public static final String DEBUG      = "debug";
     }
 
     public static final class Blocks
     {
-        public static final String FLAG           = "flag";
-        public static final String FRAME          = "frame";
-        public static final String ARROW          = "arrow";
-        public static final String CRYSTAL        = "crystal";
-        public static final String NICS           = "nics";
-        public static final String CTM_TEST       = "test";
-        public static final String WINDOW         = "window";
-        public static final String REDROCK_RAW    = "redrock_raw";
-        public static final String REDROCK        = "redrock";
-        public static final String REDROCK_SMOOTH = "redrock_smooth";
+        public static final String FLAG     = "flag";
+        public static final String FRAME    = "frame";
+        public static final String ARROW    = "arrow";
+        public static final String CRYSTAL  = "crystal";
+        public static final String NICS     = "nics";
+        public static final String CTM_TEST = "test";
+        public static final String WINDOW   = "window";
+        public static final String REDROCK  = "redrock";
+        public static final String LOG      = "log";
     }
 
     public static final class Tools
@@ -44,9 +44,9 @@ public class Names
 
     public static final class Keys
     {
-        public static final String CATEGORY = "keys.firstmod.category";
-        public static final String CHARGE   = "keys.firstmod.charge";
-        public static final String RELEASE  = "keys.firstmod.release";
+        public static final String CATEGORY = "keys.category";
+        public static final String CHARGE   = "keys.charge";
+        public static final String RELEASE  = "keys.release";
     }
 
     public static final class NBT

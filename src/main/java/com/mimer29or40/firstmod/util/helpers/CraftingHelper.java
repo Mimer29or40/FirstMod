@@ -5,6 +5,7 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
+@SuppressWarnings( "unchecked" )
 public class CraftingHelper
 {
     public static void addShapedOreRecipe(ItemStack outputItemStack, Object... objectInputs)

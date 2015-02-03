@@ -1,26 +1,35 @@
 package com.mimer29or40.firstmod.proxy;
 
+import com.mimer29or40.firstmod.block.FMBlock;
 import com.mimer29or40.firstmod.client.handler.ClientEventHandler;
 import com.mimer29or40.firstmod.client.handler.HUDHandler;
 import com.mimer29or40.firstmod.client.handler.KeyInputEventHandler;
-import com.mimer29or40.firstmod.client.render.block.CTMRender;
+import com.mimer29or40.firstmod.client.helpers.ModelHelper;
 import com.mimer29or40.firstmod.client.settings.Keybindings;
-import cpw.mods.fml.client.registry.ClientRegistry;
-import cpw.mods.fml.client.registry.RenderingRegistry;
-import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.client.Minecraft;
-import net.minecraft.entity.EntityLivingBase;
+import com.mimer29or40.firstmod.item.FMItem;
+import com.mimer29or40.firstmod.reference.Reference;
+import com.mimer29or40.firstmod.util.helpers.LogHelper;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
+import java.util.ArrayList;
+
+@SuppressWarnings( "unchecked" )
 @SideOnly(Side.CLIENT)
-public class ClientProxy extends CommonProxy
+public class ClientProxy
+        extends CommonProxy
 {
+    private static final ArrayList< ModelBlockEntry > blocksToRegister = new ArrayList();
+    private static final ArrayList< ModelItemEntry >  itemsToRegister  = new ArrayList();
+
     @Override
+
     public void preInit(FMLPreInitializationEvent event)
     {
         super.preInit(event);
@@ -37,7 +46,7 @@ public class ClientProxy extends CommonProxy
     {
         super.init(event);
 
-        RenderingRegistry.registerBlockHandler(new CTMRender());
+        registerRenderers();
 
         FMLCommonHandler.instance().bus().register(new KeyInputEventHandler());
     }
@@ -46,93 +55,66 @@ public class ClientProxy extends CommonProxy
     public void postInit(FMLPostInitializationEvent event)
     {
         super.postInit(event);
+
+        LogHelper.info("First Mod Client has finished initializing");
     }
 
-    void registerKeyBindings()
+    private void registerKeyBindings()
     {
         ClientRegistry.registerKeyBinding(Keybindings.charge);
         ClientRegistry.registerKeyBinding(Keybindings.release);
     }
 
     @Override
-    public boolean isTheClientPlayer(EntityLivingBase entity)
+    public void registerRenderers()
     {
-        return entity == Minecraft.getMinecraft().thePlayer;
+        for(ModelBlockEntry modelBlockEntry : blocksToRegister)
+        {
+            ModelHelper.registerBlock(modelBlockEntry.block, modelBlockEntry.metadata, Reference.MOD_ID + ":" + modelBlockEntry.name);
+        }
+        for(ModelItemEntry modelItemEntry : itemsToRegister)
+        {
+            ModelHelper.registerItem(modelItemEntry.item, modelItemEntry.metadata, Reference.MOD_ID + ":" + modelItemEntry.name);
+        }
     }
 
     @Override
-    public long getWorldElapsedTicks()
+    public void registerBlockForMeshing(FMBlock block, int metadata, String name)
     {
-        return Minecraft.getMinecraft().theWorld == null ? 0 : Minecraft.getMinecraft().theWorld.getTotalWorldTime();
+        blocksToRegister.add(new ModelBlockEntry(block, metadata, name));
     }
 
-    //    private static boolean noclipEnabled = false;
-    //
-    //    @Override
-    //    public void setSparkleFXNoClip(boolean noclip)
-    //    {
-    //        noclipEnabled = noclip;
-    //    }
-    //
-    //    @Override
-    //    public void sparkleFX(World world, double x, double y, double z, float r, float g, float b, float size, int m, boolean fake)
-    //    {
-    //        if(!doParticle() && !fake)
-    //            return;
-    //
-    //        FXSparkle sparkle = new FXSparkle(world, x, y, z, size, r, g, b, m);
-    //        sparkle.fake = sparkle.noClip = fake;
-    //        if(noclipEnabled)
-    //            sparkle.noClip = true;
-    //        Minecraft.getMinecraft().effectRenderer.addEffect(sparkle);
-    //    }
-    //
-    //    private static boolean distanceLimit = true;
-    //    private static boolean depthTest = true;
-    //
-    //    @Override
-    //    public void setWispFXDistanceLimit(boolean limit)
-    //    {
-    //        distanceLimit = limit;
-    //    }
-    //
-    //    @Override
-    //    public void setWispFXDepthTest(boolean test)
-    //    {
-    //        depthTest = test;
-    //    }
-    //
-    //    @Override
-    //    public void wispFX(World world, double x, double y, double z, float r, float g, float b, float size, float motionx, float motiony, float motionz, float maxAgeMul)
-    //    {
-    //        if(!doParticle())
-    //            return;
-    //
-    //        FXWisp wisp = new FXWisp(world, x, y, z, size, r, g, b, distanceLimit, depthTest, maxAgeMul);
-    //        wisp.motionX = motionx;
-    //        wisp.motionY = motiony;
-    //        wisp.motionZ = motionz;
-    //
-    //        Minecraft.getMinecraft().effectRenderer.addEffect(wisp);
-    //    }
-    //
-    //    private boolean doParticle()
-    //    {
-    ////        if(!ConfigHandler.useVanillaParticleLimiter)
-    ////            return true;
-    //
-    //        float chance = 1F;
-    //        if(Minecraft.getMinecraft().gameSettings.particleSetting == 1)
-    //            chance = 0.6F;
-    //        else if(Minecraft.getMinecraft().gameSettings.particleSetting == 2)
-    //            chance = 0.2F;
-    //
-    //        return Math.random() < chance;
-    //    }
-    //
-    //    @Override
-    //    public void lightningFX(World world, Vector3 vectorStart, Vector3 vectorEnd, float ticksPerMeter, long seed, int colorOuter, int colorInner)
-    //    {
-    //        LightningHandler.spawnLightningBolt(world, vectorStart, vectorEnd, ticksPerMeter, seed, colorOuter, colorInner);
-    //    }
+    @Override
+    public void registerItemForMeshing(FMItem item, int metadata, String name)
+    {
+        itemsToRegister.add(new ModelItemEntry(item, metadata, name));
+    }
+
+    private static class ModelBlockEntry
+    {
+        public final FMBlock block;
+        public final int     metadata;
+        public final String  name;
+
+        public ModelBlockEntry(FMBlock block, int metadata, String name)
+        {
+            this.block = block;
+            this.metadata = metadata;
+            this.name = name;
+        }
+    }
+
+    private static class ModelItemEntry
+    {
+        public final FMItem item;
+        public final int    metadata;
+        public final String name;
+
+        public ModelItemEntry(FMItem item, int metadata, String name)
+        {
+            this.item = item;
+            this.metadata = metadata;
+            this.name = name;
+        }
+    }
 }
